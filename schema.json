@@ -1,0 +1,1013 @@
+{
+    "graph": {
+        "Booking": [
+            {
+                "related": [
+                    "Revenue",
+                    "Sales"
+                ]
+            },
+            {
+                "nodes": [
+                    "Subscriptions",
+                    "Variable Revenue",
+                    "Professional Services",
+                    "Managed Services",
+                    "Hardware"
+                ]
+            }
+        ],
+        "COGS": [
+            {
+                "related": [
+                    "Total COGS",
+                    "P&L",
+                    "Product"
+                ]
+            },
+            {
+                "nodes": [
+                    "Technical Support",
+                    "Customer Success",
+                    "Variable",
+                    "Professional Services",
+                    "Hardware",
+                    "Dev Ops"
+                ]
+            }
+        ],
+        "Revenue": [
+            {
+                "nodes": [
+                    "Subscriptions",
+                    "Variable Revenue",
+                    "Professional Services",
+                    "Managed Services",
+                    "Hardware"
+                ]
+            },
+            {
+                "related": [
+                    "Booking",
+                    "P&L",
+                    "Variable Revenue",
+                    "Revenue Analysis"
+                ]
+            }
+        ],
+        "Total Operating Expenses": [
+            {
+                "related": [
+                    "P&L",
+                    "Expense Split",
+                    "Budgeting"
+                ]
+            },
+            {
+                "nodes": [
+                    "Total Research & Development",
+                    "Total Sales",
+                    "Total Marketing",
+                    "Total G&A Expense"
+                ]
+            }
+        ],
+        "Expense Split": [
+            {
+                "related": [
+                    "Total Operating Expenses",
+                    "Budgeting"
+                ]
+            },
+            {
+                "nodes": [
+                    "Employee Related",
+                    "Non Employee Related"
+                ]
+            }
+        ],
+        "Expenses": [
+            {
+                "related": [
+                    "P&L",
+                    "Expense Split"
+                ]
+            },
+            {
+                "nodes": [
+                    "Wages & Taxes",
+                    "Travel Expenses",
+                    "Commissions & Bonuses",
+                    "Depreciation & Amortization"
+                ]
+            }
+        ],
+        "Personel": [
+            {
+                "related": [
+                    "HR",
+                    "Operations",
+                    "P&L"
+                ]
+            },
+            {
+                "nodes": [
+                    "Services",
+                    "G&A",
+                    "Tech Support",
+                    "Customer Success",
+                    "Dev Ops",
+                    "R&D",
+                    "Sales",
+                    "Marketing"
+                ]
+            }
+        ],
+        "P&L": [
+            {
+                "related": [
+                    "BS",
+                    "COA",
+                    "Revenue",
+                    "Total Operating Expenses"
+                ]
+            },
+            {
+                "nodes": [
+                    "Booking",
+                    "Revenue",
+                    "Total COGS",
+                    "Total Operating Expenses",
+                    "EBIT",
+                    "Other Income/Expense",
+                    "Net Income",
+                    "EBITDA"
+                ]
+            }
+        ],
+        "BS": [
+            {
+                "related": [
+                    "COA",
+                    "P&L",
+                    "Asset Management"
+                ]
+            },
+            {
+                "nodes": []
+            }
+        ],
+        "COA": [
+            {
+                "related": [
+                    "BS",
+                    "Accounting"
+                ]
+            },
+            {
+                "nodes": [
+                    "1100 - Cash in Bank",
+                    "1201 - Undeposited Funds",
+                    "1202 - Accounts Receivables (AR)",
+                    "1203 - Prepaid",
+                    "1250 - Inventory",
+                    "1400 - Term Assets",
+                    "1499 - Other Current Assets",
+                    "1510 - Fixed Assets (Including Depreciation)",
+                    "1520 - Other Long Term Assets",
+                    "2100 - Current Liabilities",
+                    "2101 - Accrual",
+                    "2102 - Deferred",
+                    "2110 - Accounts Payable (AP)",
+                    "2110 - Credit Card",
+                    "2150 - Customer Deposit",
+                    "2201 - Short Term Notes",
+                    "2210 - Interest on ST Notes",
+                    "2499 - Other Current Liabilities",
+                    "2500 - Long Term Liabilities",
+                    "3010 - Distribution",
+                    "3020 - Paid In Capital",
+                    "3050 - Other Equity - Generic",
+                    "3080 - Net Income",
+                    "3090 - Retained Earnings",
+                    "4010 - Product Line 1",
+                    "4020 - Product Line 2",
+                    "4030 - Product Line 3",
+                    "4040 - Product Line 4",
+                    "4900 - Other Revenue",
+                    "4999 - Uncategorized Income",
+                    "5100 - Employee Cost COGS (W2s)",
+                    "5200 - Contractors COGS (1099s)",
+                    "5300 - Travel COGS",
+                    "5400 - Direct COGS - Generic",
+                    "5410 - Product Line 1 Direct COGS",
+                    "5420 - Product Line 2 Direct COGS",
+                    "5430 - Product Line 3 Direct COGS",
+                    "5600 - Infrastructure Technology (Hosting & Other Subscriptions)",
+                    "5700 - Merchant Fees",
+                    "5980 - Depreciation (COGS)",
+                    "5900 - Other COGS",
+                    "6100 - Employee Cost OPEX (W2s) - Generic",
+                    "6120 - Employee Cost OPEX (W2s) - S&M",
+                    "6130 - Employee Cost OPEX (W2s) - R&D",
+                    "6160 - Employee Cost OPEX (W2s) - G&A",
+                    "6200 - Professional Services (1099s) - Generic",
+                    "6220 - Professional Services (1099s) - S&M",
+                    "6230 - Professional Services (1099s) - R&D",
+                    "6260 - Professional Services (1099s) - G&A (other than Legal)",
+                    "6300 - Travel & Entertainment - Generic",
+                    "6320 - Travel & Entertainment - S&M",
+                    "6330 - Travel & Entertainment - R&D",
+                    "6360 - Travel & Entertainment - G&A",
+                    "6400 - Marketing - Generic (Non People Cost)",
+                    "6410 - Marketing (Non Staff Expenses, e.g. Agencies)",
+                    "6420 - Advertising (e.g. Paid Ad Traffic)",
+                    "6600 - Technology Infrastructure OPEX",
+                    "6700 - Legal (Including General Counsel, IP & Trademarks, Acquisition)",
+                    "6800 - Occupancy Expense",
+                    "6870 - Bank fees & charges",
+                    "6990 - Depreciation (OPEX)",
+                    "6900 - Other G&A",
+                    "7810 - Interest Income",
+                    "7820 - Grants",
+                    "7900 - Other Non Op Income",
+                    "8910 - Interest Expense",
+                    "8920 - Depreciation",
+                    "8970 - Startup Cost",
+                    "8990 - Other Non Op Expense",
+                    "9000 - Corporate Tax",
+                    "Control Total - Net Income ($)"
+                ]
+            }
+        ],
+        "KPI": [
+            {
+                "nodes": [
+                    "Total Revenue ($)",
+                    "COGS Total ($)",
+                    "Cash In Bank ($)",
+                    "Bookings Total ($)",
+                    "CAC Total ($)",
+                    "Cash Burn Gross [=Breakeven] ($)",
+                    "GA Total ($)",
+                    "RD Total ($)",
+                    "Cash Burn Net ($)",
+                    "Cash Position Net ($)",
+                    "Churn Total (%)",
+                    "COGS Maintenance ($)",
+                    "COGS Management ($)",
+                    "Conversion Units Total (#)",
+                    "Current Assets Total ($)",
+                    "Current Liabilities Total ($)",
+                    "EBITDA Total ($)",
+                    "EBT Total ($)",
+                    "Equity Total ($)",
+                    "Fixed Costs ($)",
+                    "Fixed Revenue ($)",
+                    "Funding Total ($)",
+                    "GP Total ($)",
+                    "Long Term Assets Total ($)",
+                    "Long Term Liabilities Total ($)",
+                    "LTV Total ($)",
+                    "New Hires Total (#)",
+                    "New Leads Total (#)",
+                    "New Units Total (#)",
+                    "NI Total ($)",
+                    "NOI Total ($)",
+                    "OPEX Total ($)",
+                    "People Cost Total ($)",
+                    "People Count COGS (#)",
+                    "People Count GA (#)",
+                    "People Count RD (#)",
+                    "People Count SM (#)",
+                    "People Count Total (#)",
+                    "Rev ARR ($)",
+                    "Rev Growth (%)",
+                    "Rev MoM Growth (%)",
+                    "Rev Non Recurring ($)",
+                    "Rev Recurring ($)",
+                    "Rev Total ($)",
+                    "Rev YoY Growth (%)",
+                    "SM Total ($)",
+                    "Transition Units Total (#)",
+                    "Units Total (#)",
+                    "Users Total (#)",
+                    "Variable Costs ($)",
+                    "Variable Revenue",
+                    "Revenue per Avg FTE ($000)",
+                    "Total OpEx / Headcount ($000)",
+                    "Wages & Taxes / Headcount ($000)",
+                    "Wages & Taxes as % of Revenue",
+                    "Commissions as % of Revenue"
+                ]
+            }
+        ],
+        "Control": [
+            {
+                "nodes": [
+                    "1 - Assets - Current",
+                    "1 - Assets - Current - Change in CA",
+                    "1 - Assets - Long Term",
+                    "1 - Assets - Long Term - Change in LTA",
+                    "2 - Liabilities - Current",
+                    "2 - Liabilities - Current - Change in CL",
+                    "2 - Liabilities - Long Term",
+                    "2 - Liabilities - Long Term - Change in LTL",
+                    "3 - Equity",
+                    "3 - Equity - Change in Equity",
+                    "4 - ASP",
+                    "4 - Booking",
+                    "4 - Collections",
+                    "4 - Invoicing",
+                    "4 - Revenue",
+                    "4 - Units",
+                    "5 - COGS",
+                    "6 - OPEX",
+                    "7 - Non Op Income",
+                    "8 - Non Op Expense",
+                    "9 - Tax",
+                    "C - Capex",
+                    "F - Funding",
+                    "H - Headcount"
+                ]
+            }
+        ],
+        "Functions": [
+            {
+                "nodes": [
+                    "R&D",
+                    "Sales",
+                    "Marketing",
+                    "Services",
+                    "G&A",
+                    "Tech Support",
+                    "Customer Success",
+                    "Dev Ops"
+                ]
+            }
+        ],
+        "Product": [
+            {
+                "nodes": [
+                    "Product Line 1",
+                    "Product Line 2",
+                    "Product Line 3"
+                ]
+            }
+        ],
+        "Divisions": [
+            {
+                "nodes": [
+                    "Division 1",
+                    "Division 2",
+                    "Division 3"
+                ]
+            }
+        ],
+        "Currency": [
+            {
+                "nodes": [
+                    "usd",
+                    "euro",
+                    "cad"
+                ]
+            }
+        ],
+        "Departments": [
+            {
+                "nodes": [
+                    "Department 1",
+                    "Department 2",
+                    "Department 3"
+                ]
+            }
+        ],
+        "Projects": [
+            {
+                "nodes": [
+                    "Project 1",
+                    "Project 2",
+                    "Project 3"
+                ]
+            }
+        ],
+        "Locations": [
+            
+        ],
+        "Offices": [
+            
+        ],
+        "Accounting Method": [
+            {
+                "nodes": [
+                    "Accural",
+                    "Cash"
+                ]
+            }
+        ],
+        "Fixed": [
+            {
+                "nodes": [
+                    "Fixed Cost ($)",
+                    "Fixed Revenue ($)"
+                ]
+            }
+        ],
+        "Variable": [
+            {
+                "nodes": [
+                    "Variable Cost ($)",
+                    "Variable Revenue"
+                ]
+            }
+        ],
+        "1100 - Cash in Bank": [
+            
+        ],
+        "1201 - Undeposited Funds": [
+            
+        ],
+        "1202 - Accounts Receivables (AR)": [
+            
+        ],
+        "1203 - Prepaid": [
+            
+        ],
+        "1250 - Inventory": [
+            
+        ],
+        "1400 - Term Assets": [
+            
+        ],
+        "1499 - Other Current Assets": [
+            
+        ],
+        "1510 - Fixed Assets (Including Depreciation)": [
+            
+        ],
+        "1520 - Other Long Term Assets": [
+            
+        ],
+        "2100 - Current Liabilities": [
+            
+        ],
+        "2101 - Accrual": [
+            
+        ],
+        "2102 - Deferred": [
+            
+        ],
+        "2110 - Accounts Payable (AP)": [
+            
+        ],
+        "2110 - Credit Card": [
+            
+        ],
+        "2150 - Customer Deposit": [
+            
+        ],
+        "2201 - Short Term Notes": [
+            
+        ],
+        "2210 - Interest on ST Notes": [
+            
+        ],
+        "2499 - Other Current Liabilities": [
+            
+        ],
+        "2500 - Long Term Liabilities": [
+            
+        ],
+        "3010 - Distribution": [
+            
+        ],
+        "3020 - Paid In Capital": [
+            
+        ],
+        "3050 - Other Equity - Generic": [
+            
+        ],
+        "3080 - Net Income": [
+            
+        ],
+        "3090 - Retained Earnings": [
+            
+        ],
+        "4010 - Product Line 1": [
+            
+        ],
+        "4020 - Product Line 2": [
+            
+        ],
+        "4030 - Product Line 3": [
+            
+        ],
+        "4040 - Product Line 4": [
+            
+        ],
+        "4900 - Other Revenue": [
+            
+        ],
+        "4999 - Uncategorized Income": [
+            
+        ],
+        "5100 - Employee Cost COGS (W2s)": [
+            
+        ],
+        "5200 - Contractors COGS (1099s)": [
+            
+        ],
+        "5300 - Travel COGS": [
+            
+        ],
+        "5400 - Direct COGS - Generic": [
+            
+        ],
+        "5410 - Product Line 1 Direct COGS": [
+            
+        ],
+        "5420 - Product Line 2 Direct COGS": [
+            
+        ],
+        "5430 - Product Line 3 Direct COGS": [
+            
+        ],
+        "5600 - Infrastructure Technology (Hosting & Other Subscriptions)": [
+            
+        ],
+        "5700 - Merchant Fees": [
+            
+        ],
+        "5980 - Depreciation (COGS)": [
+            
+        ],
+        "5900 - Other COGS": [
+            
+        ],
+        "6100 - Employee Cost OPEX (W2s) - Generic": [
+            
+        ],
+        "6120 - Employee Cost OPEX (W2s) - S&M": [
+            
+        ],
+        "6130 - Employee Cost OPEX (W2s) - R&D": [
+            
+        ],
+        "6160 - Employee Cost OPEX (W2s) - G&A": [
+            
+        ],
+        "6200 - Professional Services (1099s) - Generic": [
+            
+        ],
+        "6220 - Professional Services (1099s) - S&M": [
+            
+        ],
+        "6230 - Professional Services (1099s) - R&D": [
+            
+        ],
+        "6260 - Professional Services (1099s) - G&A (other than Legal)": [
+            
+        ],
+        "6300 - Travel & Entertainment - Generic": [
+            
+        ],
+        "6320 - Travel & Entertainment - S&M": [
+            
+        ],
+        "6330 - Travel & Entertainment - R&D": [
+            
+        ],
+        "6360 - Travel & Entertainment - G&A": [
+            
+        ],
+        "6400 - Marketing - Generic (Non People Cost)": [
+            
+        ],
+        "6410 - Marketing (Non Staff Expenses, e.g. Agencies)": [
+            
+        ],
+        "6420 - Advertising (e.g. Paid Ad Traffic)": [
+            
+        ],
+        "6600 - Technology Infrastructure OPEX": [
+            
+        ],
+        "6700 - Legal (Including General Counsel, IP & Trademarks, Acquisition)": [
+            
+        ],
+        "6800 - Occupancy Expense": [
+            
+        ],
+        "6870 - Bank fees & charges": [
+            
+        ],
+        "6990 - Depreciation (OPEX)": [
+            
+        ],
+        "6900 - Other G&A": [
+            
+        ],
+        "7810 - Interest Income": [
+            
+        ],
+        "7820 - Grants": [
+            
+        ],
+        "7900 - Other Non Op Income": [
+            
+        ],
+        "8910 - Interest Expense": [
+            
+        ],
+        "8920 - Depreciation": [
+            
+        ],
+        "8970 - Startup Cost": [
+            
+        ],
+        "8990 - Other Non Op Expense": [
+            
+        ],
+        "9000 - Corporate Tax": [
+            
+        ],
+        "Control Total - Net Income ($)": [
+            
+        ],
+        "Total Revenue ($)": [
+            
+        ],
+        "COGS Total ($)": [
+            
+        ],
+        "Cash In Bank ($)": [
+            
+        ],
+        "Bookings Total ($)": [
+            
+        ],
+        "CAC Total ($)": [
+            
+        ],
+        "Cash Burn Gross [=Breakeven] ($)": [
+            
+        ],
+        "GA Total ($)": [
+            
+        ],
+        "RD Total ($)": [
+            
+        ],
+        "Cash Burn Net ($)": [
+            
+        ],
+        "Cash Position Net ($)": [
+            
+        ],
+        "Churn Total (%)": [
+            
+        ],
+        "COGS Maintenance ($)": [
+            
+        ],
+        "COGS Management ($)": [
+            
+        ],
+        "Conversion Units Total (#)": [
+            
+        ],
+        "Current Assets Total ($)": [
+            
+        ],
+        "Current Liabilities Total ($)": [
+            
+        ],
+        "EBITDA Total ($)": [
+            
+        ],
+        "EBT Total ($)": [
+            
+        ],
+        "Equity Total ($)": [
+            
+        ],
+        "Fixed Costs ($)": [
+            
+        ],
+        "Fixed Revenue ($)": [
+            
+        ],
+        "Funding Total ($)": [
+            
+        ],
+        "GP Total ($)": [
+            
+        ],
+        "Long Term Assets Total ($)": [
+            
+        ],
+        "Long Term Liabilities Total ($)": [
+            
+        ],
+        "LTV Total ($)": [
+            
+        ],
+        "New Hires Total (#)": [
+            
+        ],
+        "New Leads Total (#)": [
+            
+        ],
+        "New Units Total (#)": [
+            
+        ],
+        "NI Total ($)": [
+            
+        ],
+        "NOI Total ($)": [
+            
+        ],
+        "OPEX Total ($)": [
+            
+        ],
+        "People Cost Total ($)": [
+            
+        ],
+        "People Count COGS (#)": [
+            
+        ],
+        "People Count GA (#)": [
+            
+        ],
+        "People Count RD (#)": [
+            
+        ],
+        "People Count SM (#)": [
+            
+        ],
+        "People Count Total (#)": [
+            
+        ],
+        "Rev ARR ($)": [
+            
+        ],
+        "Rev Growth (%)": [
+            
+        ],
+        "Rev MoM Growth (%)": [
+            
+        ],
+        "Rev Non Recurring ($)": [
+            
+        ],
+        "Rev Recurring ($)": [
+            
+        ],
+        "Rev Total ($)": [
+            
+        ],
+        "Rev YoY Growth (%)": [
+            
+        ],
+        "SM Total ($)": [
+            
+        ],
+        "Transition Units Total (#)": [
+            
+        ],
+        "Units Total (#)": [
+            
+        ],
+        "Users Total (#)": [
+            
+        ],
+        "Variable Costs ($)": [
+            
+        ],
+        "Variable Revenue": [
+            
+        ],
+        "1 - Assets - Current": [
+            
+        ],
+        "1 - Assets - Current - Change in CA": [
+            
+        ],
+        "1 - Assets - Long Term": [
+            
+        ],
+        "1 - Assets - Long Term - Change in LTA": [
+            
+        ],
+        "2 - Liabilities - Current": [
+            
+        ],
+        "2 - Liabilities - Current - Change in CL": [
+            
+        ],
+        "2 - Liabilities - Long Term": [
+            
+        ],
+        "2 - Liabilities - Long Term - Change in LTL": [
+            
+        ],
+        "3 - Equity": [
+            
+        ],
+        "3 - Equity - Change in Equity": [
+            
+        ],
+        "4 - ASP": [
+            
+        ],
+        "4 - Booking": [
+            
+        ],
+        "4 - Collections": [
+            
+        ],
+        "4 - Invoicing": [
+            
+        ],
+        "4 - Revenue": [
+            
+        ],
+        "4 - Units": [
+            
+        ],
+        "5 - COGS": [
+            
+        ],
+        "6 - OPEX": [
+            
+        ],
+        "7 - Non Op Income": [
+            
+        ],
+        "8 - Non Op Expense": [
+            
+        ],
+        "9 - Tax": [
+            
+        ],
+        "C - Capex": [
+            
+        ],
+        "F - Funding": [
+            
+        ],
+        "H - Headcount": [
+            
+        ],
+        "Product Line 1": [
+            
+        ],
+        "Product Line 2": [
+            
+        ],
+        "Product Line 3": [
+            
+        ],
+        "Division 1": [
+            
+        ],
+        "Division 2": [
+            
+        ],
+        "Division 3": [
+            
+        ],
+        "usd": [
+            
+        ],
+        "euro": [
+            
+        ],
+        "cad": [
+            
+        ],
+        "Department 1": [
+            
+        ],
+        "Department 2": [
+            
+        ],
+        "Department 3": [
+            
+        ],
+        "Project 1": [
+            
+        ],
+        "Project 2": [
+            
+        ],
+        "Project 3": [
+            
+        ],
+        "Accural": [
+            
+        ],
+        "Cash": [
+            
+        ],
+        "Fixed Cost ($)": [
+            
+        ],
+        "Variable Cost ($)": [
+            
+        ],
+        "Subscriptions": [
+            
+        ],
+        "Professional Services": [
+            
+        ],
+        "Managed Services": [
+            
+        ],
+        "Hardware": [
+            
+        ],
+        "Technical Support": [
+            
+        ],
+        "Customer Success": [
+            
+        ],
+        "Dev Ops": [
+            
+        ],
+        "Gross Profit": [
+            
+        ],
+        "Total Research & Development": [
+            
+        ],
+        "Total Sales": [
+            
+        ],
+        "Total Marketing": [
+            
+        ],
+        "Total G&A Expense": [
+            
+        ],
+        "EBIT": [
+            
+        ],
+        "Other Income/Expense": [
+            
+        ],
+        "EBITDA": [
+            
+        ],
+        "EBITA ex CAP": [
+            
+        ],
+        "Employee Related": [
+            
+        ],
+        "Non Employee Related": [
+            
+        ],
+        "Wages & Taxes": [
+            
+        ],
+        "Travel Expenses": [
+            
+        ],
+        "Commissions & Bonuses": [
+            
+        ],
+        "Depreciation & Amortization": [
+            
+        ],
+        "Tech Support": [
+            
+        ],
+        "Services": [
+            
+        ],
+        "G&A": [
+            
+        ],
+        "Revenue per Avg FTE ($000)": [
+            
+        ],
+        "Total OpEx / Headcount ($000)": [
+            
+        ],
+        "Wages & Taxes / Headcount ($000)": [
+            
+        ],
+        "Wages & Taxes as % of Revenue": [
+            
+        ],
+        "Commissions as % of Revenue": [
+            
+        ],
+        "R&D": [
+            
+        ]
+    }
+}

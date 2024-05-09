@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Graph Visualization</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <input type="text" id="nodeLabelInput">
+    <input type="file" id="fileInput" accept=".json">
+    <button id="downloadButton">Download Graph Data</button> <!-- Button for downloading the graph -->
+    <div id="mynetwork"></div>
+
+    <!-- Include External JavaScript Files -->
+    <script src="presentation.js"></script>
+    <script src="modification.js"></script>
+    <script src="creation.js"></script>
+
+    <script>
+        // Main Script That Ties Everything Together
+        document.getElementById('fileInput').addEventListener('change', function (event) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var contents = e.target.result;
+                var json = JSON.parse(contents);
+                initializeGraph(); // Set up the graph
+                processFile(json); // Process data from file and create nodes and edges
+                setupEventListeners(); // Set up modification events
+            };
+            reader.readAsText(event.target.files[0]);
+        });
+
+        // Setup the download button
+        document.getElementById('downloadButton').addEventListener('click', function () {
+            downloadGraphData(network); // Assuming 'network' is your vis.js network instance
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var container = document.getElementById('mynetwork');
+            var data = { nodes: new vis.DataSet([]), edges: new vis.DataSet([]) };
+            var options = {};
+            var network = new vis.Network(container, data, options);
+
+            document.getElementById('downloadButton').addEventListener('click', function () {
+                downloadGraphData(network);
+            });
+
+        });
+    </script>
+</body>
+
+</html>
