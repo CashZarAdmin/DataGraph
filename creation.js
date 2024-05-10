@@ -1,3 +1,5 @@
+var nameToNodeIds = {};
+
 function processFile(graphData) {
     const graph = graphData;
     for (const [key, nodeInfo] of Object.entries(graph)) {
@@ -21,6 +23,7 @@ function addNodeIfNotExist(nodeId, label = "", isNew = false) {
             label: label,
             color: isNew ? newNodeStyle.color : defaultNodeStyle.color,
         });
+        updateNameToNodeIdMap(nodeId, label);
     }
 }
 
@@ -31,6 +34,53 @@ function addEdge(fromId, toId, type) {
         label: type,
         color: getColor(type)
     });
+}
+
+// Function to update the global name-to-node ID map
+function updateNameToNodeIdMap(nodeId, label) {
+    // Remove nodeId from any existing label group it may be part of
+    Object.keys(nameToNodeIds).forEach(key => {
+        let index = nameToNodeIds[key].indexOf(nodeId);
+        if (index > -1) {
+            nameToNodeIds[key].splice(index, 1);
+        }
+    });
+
+    // Add nodeId to new label group
+    if (!nameToNodeIds[label]) {
+        nameToNodeIds[label] = [];
+    }
+    nameToNodeIds[label].push(nodeId);
+}
+
+function searchNode(network, nodes) {
+    var input = document.getElementById('searchInput');
+    var nodeName = input.value.trim();  // Get the value from the input field and trim whitespace
+
+    // Reset all node colors before highlighting new search
+    var allNodes = nodes.get({returnType: "Object"});
+    var updates = [];
+
+    // Highlight or reset nodes based on the search input
+    if (nodeName) {
+        let foundNodeIds = nameToNodeIds[nodeName] || [];
+        if (foundNodeIds.length > 0) {
+            foundNodeIds.forEach(nodeId => {
+                updates.push({id: nodeId, color: {background: 'red', border: '#2B7CE9'}});
+            });
+            network.fit({nodes: foundNodeIds, animation: true}); // Focus the network view on these nodes
+        } else {
+            alert("Node not found!");
+        }
+    } else {
+        // If search is cleared, reset all nodes
+        for (let nodeId in allNodes) {
+            updates.push({id: nodeId, color: undefined}); // Reset color to default
+        }
+    }
+
+    // Apply all color updates in a single batch
+    nodes.update(updates);
 }
 
 function getColor(label) {
