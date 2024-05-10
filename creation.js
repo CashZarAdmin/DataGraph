@@ -1,24 +1,25 @@
 function processFile(graphData) {
-    const graph = graphData.graph;
-    for (const [key, entries] of Object.entries(graph)) {
-        addNodeIfNotExist(key);
-        entries.forEach(entry => {
-            Object.entries(entry).forEach(([edgeType, items]) => {
-                items.forEach(item => {
-                    addNodeIfNotExist(item);
-                    addEdge(key, item, edgeType);
+    const graph = graphData;
+    for (const [key, nodeInfo] of Object.entries(graph)) {
+        addNodeIfNotExist(key, nodeInfo.name);
+
+        nodeInfo.relationships.forEach(relationship => {
+            Object.entries(relationship).forEach(([type, relatedNodes]) => {
+                relatedNodes.forEach(relatedNodeId => {
+                    addNodeIfNotExist(relatedNodeId, graph[relatedNodeId]?.name);
+                    addEdge(key, relatedNodeId, type);
                 });
             });
         });
     }
 }
 
-function addNodeIfNotExist(nodeId, isNew = false) {
+function addNodeIfNotExist(nodeId, label = "", isNew = false) {
     if (!nodes.get(nodeId)) {
         nodes.add({
             id: nodeId,
-            label: nodeId,
-            color: isNew ? newNodeStyle.color : defaultNodeStyle.color
+            label: label,
+            color: isNew ? newNodeStyle.color : defaultNodeStyle.color,
         });
     }
 }
@@ -32,7 +33,6 @@ function addEdge(fromId, toId, type) {
     });
 }
 
-
 function getColor(label) {
     let hash = 0;
     for (let i = 0; i < label.length; i++) {
@@ -42,41 +42,41 @@ function getColor(label) {
     return "#" + "00000".substring(0, 6 - color.length) + color;
 }
 
-// Function to backup the graph data and convert it to JSON
 function exportGraphData(network) {
-    var nodesArray = network.body.data.nodes.get();
-    var edgesArray = network.body.data.edges.get();
+    const nodesArray = network.body.data.nodes.get();
+    const edgesArray = network.body.data.edges.get();
 
-    var structuredGraph = nodesArray.reduce((acc, node) => {
-        acc[node.id] = [];
+    // First, create a map from node IDs to their full data including relationships arrays
+    const graph = nodesArray.reduce((acc, node) => {
+        acc[node.id] = {
+            name: node.label,
+            description: node.description || "this is description", // Default description or existing
+            relationships: []
+        };
         return acc;
     }, {});
 
-    // Process each edge to populate the connection structure
+    // Process each edge to populate the relationships structure
     edgesArray.forEach(edge => {
-        let sourceId = edge.from;
-        let targetId = edge.to;
-        let label = edge.label;
+        const sourceId = edge.from;
+        const targetId = edge.to;
+        const type = edge.label;
 
-        if (!structuredGraph[sourceId]) {
-            structuredGraph[sourceId] = [];
+        // Ensure there is a relationship object for this type
+        let relationship = graph[sourceId].relationships.find(r => r[type]);
+        if (!relationship) {
+            relationship = { [type]: [] };
+            graph[sourceId].relationships.push(relationship);
         }
 
-        // Find or create the type array for this edge type
-        let connection = structuredGraph[sourceId].find(c => c.hasOwnProperty(label));
-        if (!connection) {
-            connection = { [label]: [] };
-            structuredGraph[sourceId].push(connection);
-        }
-
-        // Add the target node to the connection type array if it's not already included
-        if (!connection[label].includes(targetId)) {
-            connection[label].push(targetId);
+        // Add the target node to the specific relationship type array if it's not already included
+        if (!relationship[type].includes(targetId)) {
+            relationship[type].push(targetId);
         }
     });
 
     // Return the structured graph as a stringified JSON
-    return JSON.stringify({ "graph": structuredGraph }, null, 4);  // Pretty print JSON
+    return JSON.stringify(graph, null, 4);  // Pretty print JSON
 }
 
 function downloadGraphData(network) {
