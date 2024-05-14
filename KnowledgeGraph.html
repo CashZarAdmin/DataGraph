@@ -34,6 +34,7 @@
             var options = {};
             network = new vis.Network(container, data, options);
             nodes = data.nodes;
+            setupEventListeners(); 
 
             document.getElementById('searchButton').addEventListener('click', async function () {
                 var userInput = document.getElementById('searchInput').value;
@@ -63,7 +64,7 @@
                     var contents = e.target.result;
                     var json = JSON.parse(contents);
                     initializeGraph();  
-                    processFile(json);  
+                    processFile(json);
                     setupEventListeners(); 
                 };
                 reader.readAsText(event.target.files[0]);
