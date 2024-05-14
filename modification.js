@@ -25,6 +25,9 @@ function setupEventListeners() {
             },
             deleteNode: function(data, callback) {
                 if (confirm("Are you sure you want to delete this node?")) {
+                    data.nodes.forEach(function(nodeId) {
+                        nodes.remove({ id: nodeId });
+                    });
                     callback(data);
                 }
             },
@@ -38,7 +41,7 @@ function setupEventListeners() {
     network.setOptions(options);
 
     var inputElement = document.getElementById('nodeLabelInput');
-    network.on("click", function (params) {
+    network.on("doubleClick", function (params) {
         if (params.nodes.length > 0) {
             var nodeId = params.nodes[0];
             var nodeData = nodes.get(nodeId);  // Retrieve the current node data

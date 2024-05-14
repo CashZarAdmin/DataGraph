@@ -112,16 +112,18 @@ function exportGraphData(network) {
         const targetId = edge.to;
         const type = edge.label;
 
-        // Ensure there is a relationship object for this type
-        let relationship = graph[sourceId].relationships.find(r => r[type]);
-        if (!relationship) {
-            relationship = { [type]: [] };
-            graph[sourceId].relationships.push(relationship);
-        }
+        if (graph[sourceId] && graph[sourceId].relationships) {
+            // Ensure there is a relationship object for this type
+            let relationship = graph[sourceId].relationships.find(r => r[type]);
+            if (!relationship) {
+                relationship = { [type]: [] };
+                graph[sourceId].relationships.push(relationship);
+            }
 
-        // Add the target node to the specific relationship type array if it's not already included
-        if (!relationship[type].includes(targetId)) {
-            relationship[type].push(targetId);
+            // Add the target node to the specific relationship type array if it's not already included
+            if (!relationship[type].includes(targetId)) {
+                relationship[type].push(targetId);
+            }
         }
     });
     return JSON.stringify(graph, null, 4);
