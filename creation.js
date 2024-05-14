@@ -58,7 +58,7 @@ function searchNode(network, nodes) {
     var nodeName = input.value.trim();  // Get the value from the input field and trim whitespace
 
     // Reset all node colors before highlighting new search
-    var allNodes = nodes.get({returnType: "Object"});
+    var allNodes = nodes.get({ returnType: "Object" });
     var updates = [];
 
     // Highlight or reset nodes based on the search input
@@ -66,16 +66,16 @@ function searchNode(network, nodes) {
         let foundNodeIds = nameToNodeIds[nodeName] || [];
         if (foundNodeIds.length > 0) {
             foundNodeIds.forEach(nodeId => {
-                updates.push({id: nodeId, color: {background: 'red', border: '#2B7CE9'}});
+                updates.push({ id: nodeId, color: { background: 'red', border: '#2B7CE9' } });
             });
-            network.fit({nodes: foundNodeIds, animation: true}); // Focus the network view on these nodes
+            network.fit({ nodes: foundNodeIds, animation: true }); // Focus the network view on these nodes
         } else {
             alert("Node not found!");
         }
     } else {
         // If search is cleared, reset all nodes
         for (let nodeId in allNodes) {
-            updates.push({id: nodeId, color: undefined}); // Reset color to default
+            updates.push({ id: nodeId, color: undefined }); // Reset color to default
         }
     }
 
@@ -124,9 +124,7 @@ function exportGraphData(network) {
             relationship[type].push(targetId);
         }
     });
-
-    // Return the structured graph as a stringified JSON
-    return JSON.stringify(graph, null, 4);  // Pretty print JSON
+    return JSON.stringify(graph, null, 4);
 }
 
 function downloadGraphData(network) {

@@ -37,14 +37,6 @@ function setupEventListeners() {
     };
     network.setOptions(options);
 
-    // // Deleting a node
-    // network.on("doubleClick", function (params) {
-    //     if (params.nodes.length > 0) {
-    //         var nodeId = params.nodes[0];
-    //         network.body.data.nodes.remove(nodeId);
-    //     }
-    // });
-
     var inputElement = document.getElementById('nodeLabelInput');
     network.on("click", function (params) {
         if (params.nodes.length > 0) {

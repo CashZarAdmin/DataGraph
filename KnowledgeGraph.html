@@ -35,9 +35,21 @@
             network = new vis.Network(container, data, options);
             nodes = data.nodes;
 
-            // Setup the search button functionality
-            document.getElementById('searchButton').addEventListener('click', function () {
-                searchNode(network, nodes);
+            document.getElementById('searchButton').addEventListener('click', async function () {
+                var userInput = document.getElementById('searchInput').value;
+                var graph = exportGraphData(network)
+                try {
+                    const response = await fetch('http://localhost:3000/ask', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ userInput, graph })
+                    });
+                    const data = await response.json();
+                    console.log(data.suggestions);
+                    // Process the suggestions to update the graph
+                } catch (error) {
+                    console.error('Failed to fetch from backend:', error);
+                }
             });
 
             // Setup the download functionality
@@ -50,9 +62,9 @@
                 reader.onload = function (e) {
                     var contents = e.target.result;
                     var json = JSON.parse(contents);
-                    initializeGraph(network, data.nodes, data.edges);  // Assuming initializeGraph can take parameters now
-                    processFile(json, network, data.nodes, data.edges);  // Assuming processFile can take parameters now
-                    setupEventListeners(network, data.nodes, data.edges);  // Assuming setupEventListeners can take parameters now
+                    initializeGraph();  
+                    processFile(json);  
+                    setupEventListeners(); 
                 };
                 reader.readAsText(event.target.files[0]);
             });
