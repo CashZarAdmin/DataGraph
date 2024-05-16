@@ -1,0 +1,1048 @@
+{
+    "596c371e-305e-490f-89d3-9dc3d591394e": {
+        "name": "Employee",
+        "description": "this is description",
+        "relationships": [
+            {
+                "payroll": [
+                    "e1b7e42e-c7db-4dac-b566-d26269a9c8b0",
+                    "b109081d-7067-456a-92a7-699c00addeda"
+                ]
+            }
+        ]
+    },
+    "e1b7e42e-c7db-4dac-b566-d26269a9c8b0": {
+        "name": "1099",
+        "description": "this is description",
+        "relationships": [
+            {
+                "status": [
+                    "ef770900-9a11-4463-a2c9-e4b374c8529f"
+                ]
+            }
+        ]
+    },
+    "b109081d-7067-456a-92a7-699c00addeda": {
+        "name": "W2",
+        "description": "this is description",
+        "relationships": [
+            {
+                "status": [
+                    "ee1645e0-7866-49d7-b314-fcf5c7eff7d7",
+                    "12a0d73a-bf6e-4bc9-b1c7-4becb2ec65fa"
+                ]
+            }
+        ]
+    },
+    "ef770900-9a11-4463-a2c9-e4b374c8529f": {
+        "name": "Contractor",
+        "description": "this is description",
+        "relationships": []
+    },
+    "ee1645e0-7866-49d7-b314-fcf5c7eff7d7": {
+        "name": "Part-time",
+        "description": "this is description",
+        "relationships": []
+    },
+    "12a0d73a-bf6e-4bc9-b1c7-4becb2ec65fa": {
+        "name": "Full-time",
+        "description": "this is description",
+        "relationships": []
+    },
+    "cef6719f-406e-4350-986d-62b04504a142": {
+        "name": "Location",
+        "description": "this is description",
+        "relationships": [
+            {
+                "location": [
+                    "96d33ce6-8a3e-4db8-b5f3-260dc9a9bca7",
+                    "5f40baa1-6a44-47d3-9518-9e407fd7326d",
+                    "4d677325-3dab-472b-a7e7-f1d7ec7629b9",
+                    "6c14822b-cc25-4d60-8461-bc26edd170bd",
+                    "609eb73f-8da4-4d27-ad3a-7c01bf85565f"
+                ]
+            }
+        ]
+    },
+    "96d33ce6-8a3e-4db8-b5f3-260dc9a9bca7": {
+        "name": "Country",
+        "description": "this is description",
+        "relationships": []
+    },
+    "5f40baa1-6a44-47d3-9518-9e407fd7326d": {
+        "name": "State",
+        "description": "this is description",
+        "relationships": []
+    },
+    "4d677325-3dab-472b-a7e7-f1d7ec7629b9": {
+        "name": "Region",
+        "description": "this is description",
+        "relationships": []
+    },
+    "6c14822b-cc25-4d60-8461-bc26edd170bd": {
+        "name": "Address",
+        "description": "this is description",
+        "relationships": []
+    },
+    "609eb73f-8da4-4d27-ad3a-7c01bf85565f": {
+        "name": "City",
+        "description": "this is description",
+        "relationships": []
+    },
+    "ff46172f-0696-4901-96ae-9fe79a8776cd": {
+        "name": "Currency",
+        "description": "this is description",
+        "relationships": [
+            {
+                "currency": [
+                    "e71fb95a-c655-4637-9c94-db5f45de341d",
+                    "e43282a2-c2d0-4906-96b0-aad0b9e7c866"
+                ]
+            }
+        ]
+    },
+    "e71fb95a-c655-4637-9c94-db5f45de341d": {
+        "name": "P&L",
+        "description": "this is description",
+        "relationships": []
+    },
+    "e43282a2-c2d0-4906-96b0-aad0b9e7c866": {
+        "name": "BalanceSheet",
+        "description": "this is description",
+        "relationships": []
+    },
+    "2e0b99ff-935d-406c-861d-94034050dad9": {
+        "name": "Asset",
+        "description": "this is description",
+        "relationships": [
+            {
+                "asset": [
+                    "f9dcd7ef-e198-46d5-8ddb-175c2bcd7283"
+                ]
+            }
+        ]
+    },
+    "f9dcd7ef-e198-46d5-8ddb-175c2bcd7283": {
+        "name": "1 - Assets - Current",
+        "description": "this is description",
+        "relationships": [
+            {
+                "current asset": [
+                    "577b007e-3904-4c52-90c6-1444d333b817",
+                    "ee3b4e2b-b958-4e4d-95cd-eaf8d750889d",
+                    "e18aa3aa-cdf6-4d47-9f0d-78e2eea996f1",
+                    "11d86d82-7a34-44d6-9bae-96110ea19006",
+                    "fbe2741b-1b4c-4b37-8f48-8fb181448085"
+                ]
+            }
+        ]
+    },
+    "577b007e-3904-4c52-90c6-1444d333b817": {
+        "name": "1250 - Inventory",
+        "description": "this is description",
+        "relationships": []
+    },
+    "ee3b4e2b-b958-4e4d-95cd-eaf8d750889d": {
+        "name": "1100 - Cash in Bank",
+        "description": "this is description",
+        "relationships": []
+    },
+    "e18aa3aa-cdf6-4d47-9f0d-78e2eea996f1": {
+        "name": "1201 - Undeposited Funds",
+        "description": "this is description",
+        "relationships": []
+    },
+    "11d86d82-7a34-44d6-9bae-96110ea19006": {
+        "name": "1203 - Prepaid",
+        "description": "this is description",
+        "relationships": []
+    },
+    "fbe2741b-1b4c-4b37-8f48-8fb181448085": {
+        "name": "1202 - Accounts Receivables (AR)",
+        "description": "this is description",
+        "relationships": []
+    },
+    "57a82ba3-437a-48b3-a713-cf950152189a": {
+        "name": "Long-term",
+        "description": "this is description",
+        "relationships": [
+            {
+                "asset": [
+                    "2e0b99ff-935d-406c-861d-94034050dad9"
+                ]
+            },
+            {
+                "long term asset": [
+                    "39a35570-91d6-4abf-ae3c-6e8cdd841e26",
+                    "f9147e50-d9c0-40c2-a4b4-44f0667ade25",
+                    "6df178a0-bb1b-4947-83bf-a1f508805dca",
+                    "ca9f5d9f-b9bc-4fc1-961f-5cf21c38a0ff"
+                ]
+            }
+        ]
+    },
+    "39a35570-91d6-4abf-ae3c-6e8cdd841e26": {
+        "name": "1400 - Term Assets",
+        "description": "this is description",
+        "relationships": []
+    },
+    "f9147e50-d9c0-40c2-a4b4-44f0667ade25": {
+        "name": "1499 - Other Current Assets",
+        "description": "this is description",
+        "relationships": []
+    },
+    "6df178a0-bb1b-4947-83bf-a1f508805dca": {
+        "name": "1510 - Fixed Assets (Including Depreciation)",
+        "description": "this is description",
+        "relationships": []
+    },
+    "ca9f5d9f-b9bc-4fc1-961f-5cf21c38a0ff": {
+        "name": "1520 - Other Long Term Assets",
+        "description": "this is description",
+        "relationships": []
+    },
+    "e00f905e-cb24-4227-998b-c2ac0395eaab": {
+        "name": "Liabilities",
+        "description": "this is description",
+        "relationships": [
+            {
+                "balancesheet": [
+                    "873fbc6b-64ae-4b52-8695-027e92737594"
+                ]
+            },
+            {
+                "liabilities": [
+                    "f5f96a9f-37e6-4548-b986-8b2c56ad1955",
+                    "585c5b22-5d77-4f7c-a646-b6ce07d3cced"
+                ]
+            }
+        ]
+    },
+    "873fbc6b-64ae-4b52-8695-027e92737594": {
+        "name": "BalanceSheet",
+        "description": "this is description",
+        "relationships": [
+            {
+                "balancesheet": [
+                    "2e0b99ff-935d-406c-861d-94034050dad9",
+                    "7801d5f5-122c-406f-b3e8-2b6d24e45c80"
+                ]
+            }
+        ]
+    },
+    "f5f96a9f-37e6-4548-b986-8b2c56ad1955": {
+        "name": "Current",
+        "description": "this is description",
+        "relationships": [
+            {
+                "current liabilities": [
+                    "54a0e6eb-e50a-406b-beca-db3012ee8cfa",
+                    "0b08cf81-e6bc-4e87-a64f-398c654197d0",
+                    "55def88d-ca77-4b31-bc5e-98cdbc6cdb8e",
+                    "b257fee3-b142-45b9-bfd0-b77a274f58e0",
+                    "676561a9-c9d4-4337-b34c-0af389baf2cc",
+                    "adf450fb-eb47-4f1b-b0a1-04a4da47cb98",
+                    "a6de6837-f6e0-4b52-b368-a47428206516",
+                    "1cbee7c6-8e69-42bf-a326-dee0aabfce60",
+                    "8bdfb20c-b1c5-49b1-a53f-8efd80938c8f"
+                ]
+            }
+        ]
+    },
+    "585c5b22-5d77-4f7c-a646-b6ce07d3cced": {
+        "name": "Long-term",
+        "description": "this is description",
+        "relationships": [
+            {
+                "long term liabilities": [
+                    "3c695df4-b273-4028-996a-2faa0e03266a"
+                ]
+            }
+        ]
+    },
+    "7801d5f5-122c-406f-b3e8-2b6d24e45c80": {
+        "name": "Equity",
+        "description": "this is description",
+        "relationships": [
+            {
+                "equity": [
+                    "97eed709-10a5-424e-a513-ffb1e2662b4e",
+                    "04dc2d7a-8d4c-4515-b860-7506b9ea4ce3",
+                    "3b756a72-deed-445a-8f0f-aaa74c337f28",
+                    "986fe631-02bf-45be-86d9-cb4bae56a716"
+                ]
+            }
+        ]
+    },
+    "54a0e6eb-e50a-406b-beca-db3012ee8cfa": {
+        "name": "2100 - Current Liabilities",
+        "description": "this is description",
+        "relationships": []
+    },
+    "0b08cf81-e6bc-4e87-a64f-398c654197d0": {
+        "name": "2101 - Accrual",
+        "description": "this is description",
+        "relationships": []
+    },
+    "55def88d-ca77-4b31-bc5e-98cdbc6cdb8e": {
+        "name": "2102 - Deferred",
+        "description": "this is description",
+        "relationships": []
+    },
+    "b257fee3-b142-45b9-bfd0-b77a274f58e0": {
+        "name": "2110 - Accounts Payable (AP)",
+        "description": "this is description",
+        "relationships": []
+    },
+    "676561a9-c9d4-4337-b34c-0af389baf2cc": {
+        "name": "2110 - Credit Card",
+        "description": "this is description",
+        "relationships": []
+    },
+    "adf450fb-eb47-4f1b-b0a1-04a4da47cb98": {
+        "name": "2150 - Customer Deposit",
+        "description": "this is description",
+        "relationships": []
+    },
+    "a6de6837-f6e0-4b52-b368-a47428206516": {
+        "name": "2201 - Short Term Notes",
+        "description": "this is description",
+        "relationships": []
+    },
+    "1cbee7c6-8e69-42bf-a326-dee0aabfce60": {
+        "name": "2210 - Interest on ST Notes",
+        "description": "this is description",
+        "relationships": []
+    },
+    "8bdfb20c-b1c5-49b1-a53f-8efd80938c8f": {
+        "name": "2499 - Other Current Liabilities",
+        "description": "this is description",
+        "relationships": []
+    },
+    "3c695df4-b273-4028-996a-2faa0e03266a": {
+        "name": "2500 - Long Term Liabilities",
+        "description": "this is description",
+        "relationships": []
+    },
+    "97eed709-10a5-424e-a513-ffb1e2662b4e": {
+        "name": "3050 - Shareholder Equity - Generic",
+        "description": "this is description",
+        "relationships": []
+    },
+    "04dc2d7a-8d4c-4515-b860-7506b9ea4ce3": {
+        "name": "3010 - Distribution",
+        "description": "this is description",
+        "relationships": []
+    },
+    "3b756a72-deed-445a-8f0f-aaa74c337f28": {
+        "name": "3090 - Retained Earnings",
+        "description": "this is description",
+        "relationships": []
+    },
+    "986fe631-02bf-45be-86d9-cb4bae56a716": {
+        "name": "3080 - Net Income",
+        "description": "this is description",
+        "relationships": []
+    },
+    "95398483-99ae-4140-ad92-8d1c87d24038": {
+        "name": "Runway",
+        "description": "this is description",
+        "relationships": [
+            {
+                "result": [
+                    "d398afee-33b3-43c8-9225-aa9f4712674b"
+                ]
+            }
+        ]
+    },
+    "d398afee-33b3-43c8-9225-aa9f4712674b": {
+        "name": "Calculate",
+        "description": "this is description",
+        "relationships": [
+            {
+                "calculate": [
+                    "a969b1c6-23b6-414f-98d3-a9e1c04f44fc",
+                    "9662af3d-9085-4a29-b773-eb28fe045ede"
+                ]
+            }
+        ]
+    },
+    "a969b1c6-23b6-414f-98d3-a9e1c04f44fc": {
+        "name": "Current Cash Balance",
+        "description": "this is description",
+        "relationships": []
+    },
+    "9662af3d-9085-4a29-b773-eb28fe045ede": {
+        "name": "COGS",
+        "description": "this is description",
+        "relationships": []
+    },
+    "e21924b9-6477-4f33-836c-139b0b8a356b": {
+        "name": "Product Line",
+        "description": "this is description",
+        "relationships": [
+            {
+                "revenue": [
+                    "1bde9a4f-f429-4f9c-80d0-57b5b9bbb65a"
+                ]
+            },
+            {
+                "cogs": [
+                    "f5412087-547b-4a72-b280-7e92f31bc1b3"
+                ]
+            }
+        ]
+    },
+    "1bde9a4f-f429-4f9c-80d0-57b5b9bbb65a": {
+        "name": "Revenue",
+        "description": "this is description",
+        "relationships": []
+    },
+    "f5412087-547b-4a72-b280-7e92f31bc1b3": {
+        "name": "COGS",
+        "description": "this is description",
+        "relationships": []
+    },
+    "48615aa3-625b-4826-978d-aa0728dbe9a4": {
+        "name": "Revenue Model",
+        "description": "this is description",
+        "relationships": [
+            {
+                "revenue model": [
+                    "f0edb9c8-cadb-4c4b-aee9-d27bd252fce8",
+                    "a03ad9c9-6d84-47dc-af55-00b5ca0a30d7",
+                    "53ce7213-0592-4a26-b7e1-07a6761c3d30",
+                    "abb6f66a-28b6-48ef-b008-48b8705f386a"
+                ]
+            }
+        ]
+    },
+    "f0edb9c8-cadb-4c4b-aee9-d27bd252fce8": {
+        "name": "Support",
+        "description": "this is description",
+        "relationships": []
+    },
+    "a03ad9c9-6d84-47dc-af55-00b5ca0a30d7": {
+        "name": "Subscription",
+        "description": "this is description",
+        "relationships": []
+    },
+    "53ce7213-0592-4a26-b7e1-07a6761c3d30": {
+        "name": "Implementation",
+        "description": "this is description",
+        "relationships": []
+    },
+    "abb6f66a-28b6-48ef-b008-48b8705f386a": {
+        "name": "Pay Per Invoice",
+        "description": "this is description",
+        "relationships": []
+    },
+    "5b49ad22-7a66-4817-a2e0-7ee2be4999fd": {
+        "name": "5 - COGS",
+        "description": "this is description",
+        "relationships": [
+            {
+                "cogs": [
+                    "84960299-f85b-44ab-85d6-a49944e0ba71",
+                    "ed212a12-4e4c-4485-8728-280dba02022d",
+                    "c7c990fd-d433-4b5a-8250-1cf92335cfbb",
+                    "7779c2f5-3826-4279-9186-17cff343d733",
+                    "46f86799-056e-4173-a3b6-10ec88c3f00c",
+                    "fcc81ba7-5f2e-4951-862f-203c6ada402f",
+                    "fd97c714-0718-41ac-8718-32ec4fe5a5e5",
+                    "96e5c07c-e765-4a89-90e9-fa4968cbf5ea",
+                    "d587821d-4f3e-4d46-8bef-d51ee96d12ba"
+                ]
+            }
+        ]
+    },
+    "84960299-f85b-44ab-85d6-a49944e0ba71": {
+        "name": "5600 - Infrastructure Technology (Hosting & Other Subscriptions)",
+        "description": "this is description",
+        "relationships": []
+    },
+    "ed212a12-4e4c-4485-8728-280dba02022d": {
+        "name": "5900 - Other COGS",
+        "description": "this is description",
+        "relationships": []
+    },
+    "c7c990fd-d433-4b5a-8250-1cf92335cfbb": {
+        "name": "5410 - Product Line",
+        "description": "this is description",
+        "relationships": []
+    },
+    "7779c2f5-3826-4279-9186-17cff343d733": {
+        "name": "Contractor",
+        "description": "this is description",
+        "relationships": [
+            {
+                "contractor": [
+                    "76ef9c4f-e061-4654-9b0d-e0e692869546"
+                ]
+            }
+        ]
+    },
+    "46f86799-056e-4173-a3b6-10ec88c3f00c": {
+        "name": "5300 - Travel COGS",
+        "description": "this is description",
+        "relationships": []
+    },
+    "fcc81ba7-5f2e-4951-862f-203c6ada402f": {
+        "name": "5700 - Merchant Fees",
+        "description": "this is description",
+        "relationships": []
+    },
+    "fd97c714-0718-41ac-8718-32ec4fe5a5e5": {
+        "name": "5400 - Direct COGS - Generic",
+        "description": "this is description",
+        "relationships": []
+    },
+    "96e5c07c-e765-4a89-90e9-fa4968cbf5ea": {
+        "name": "5980 - Depreciation (COGS)",
+        "description": "this is description",
+        "relationships": []
+    },
+    "d587821d-4f3e-4d46-8bef-d51ee96d12ba": {
+        "name": "Employee",
+        "description": "this is description",
+        "relationships": [
+            {
+                "employee": [
+                    "15545cc7-4a7f-4c22-aeb8-efd40e72d63b"
+                ]
+            }
+        ]
+    },
+    "76ef9c4f-e061-4654-9b0d-e0e692869546": {
+        "name": "5200 - Contractors COGS (1099s)",
+        "description": "this is description",
+        "relationships": []
+    },
+    "15545cc7-4a7f-4c22-aeb8-efd40e72d63b": {
+        "name": "5100 - Employee Cost COGS (W2s)",
+        "description": "this is description",
+        "relationships": []
+    },
+    "f48435af-94e6-455f-a157-239b54388cd6": {
+        "name": "6 - OPEX",
+        "description": "this is description",
+        "relationships": [
+            {
+                "opex": [
+                    "80fd5672-ccbf-4bc6-814d-7b536ce9c5d6",
+                    "b0db3345-ca3c-4ec1-8057-f7c6c763b5c5",
+                    "a591669e-b8af-4629-9d1e-1db9fec1b1b2",
+                    "86e44a10-1cdf-4c92-8bea-9d5b8a694b50",
+                    "d6bf3ed7-8e95-4bcd-9b2f-2b41cecc0125",
+                    "a5308072-959d-4ee5-8497-eb4d0b58ba22",
+                    "205323c7-9dc5-435e-b039-730760e9a3e0",
+                    "6f0ac73a-a3c1-41a1-9f36-d0ff12b97f1d",
+                    "ba22cbcc-dc02-4514-9e8a-96584ed1b6e4",
+                    "1814e74f-603f-48c0-b310-7b17da5db96e",
+                    "76ec1d7a-1e03-4469-9614-a44c848126cd",
+                    "60568277-d170-4dae-a619-3ba9805c0aaf",
+                    "9e8f51e2-c135-46b6-82c1-c8ae2b55f430",
+                    "039fb6c7-5fb9-46b5-a8c2-ced68794c56a",
+                    "079c65a1-5e24-44d5-895d-d4a21aa3cb52"
+                ]
+            }
+        ]
+    },
+    "80fd5672-ccbf-4bc6-814d-7b536ce9c5d6": {
+        "name": "6300 - Travel & Entertainment - Generic",
+        "description": "this is description",
+        "relationships": []
+    },
+    "b0db3345-ca3c-4ec1-8057-f7c6c763b5c5": {
+        "name": "6320 - Travel & Entertainment - S&M",
+        "description": "this is description",
+        "relationships": []
+    },
+    "a591669e-b8af-4629-9d1e-1db9fec1b1b2": {
+        "name": "6360 - Travel & Entertainment - G&A",
+        "description": "this is description",
+        "relationships": []
+    },
+    "86e44a10-1cdf-4c92-8bea-9d5b8a694b50": {
+        "name": "6400 - Marketing - Generic (Non People Cost)",
+        "description": "this is description",
+        "relationships": []
+    },
+    "d6bf3ed7-8e95-4bcd-9b2f-2b41cecc0125": {
+        "name": "6410 - Marketing (Non Staff Expenses, e.g. Agencies)",
+        "description": "this is description",
+        "relationships": []
+    },
+    "a5308072-959d-4ee5-8497-eb4d0b58ba22": {
+        "name": "6600 - Technology Infrastructure OPEX",
+        "description": "this is description",
+        "relationships": []
+    },
+    "205323c7-9dc5-435e-b039-730760e9a3e0": {
+        "name": "6700 - Legal (Including General Counsel, IP & Trademarks, Acquisition)",
+        "description": "this is description",
+        "relationships": []
+    },
+    "6f0ac73a-a3c1-41a1-9f36-d0ff12b97f1d": {
+        "name": "6800 - Occupancy Expense",
+        "description": "this is description",
+        "relationships": []
+    },
+    "ba22cbcc-dc02-4514-9e8a-96584ed1b6e4": {
+        "name": "6870 - Bank fees & charges",
+        "description": "this is description",
+        "relationships": []
+    },
+    "1814e74f-603f-48c0-b310-7b17da5db96e": {
+        "name": "6990 - Depreciation (OPEX)",
+        "description": "this is description",
+        "relationships": []
+    },
+    "76ec1d7a-1e03-4469-9614-a44c848126cd": {
+        "name": "6900 - Other G&A",
+        "description": "this is description",
+        "relationships": []
+    },
+    "60568277-d170-4dae-a619-3ba9805c0aaf": {
+        "name": "6330 - Travel & Entertainment - R&D",
+        "description": "this is description",
+        "relationships": []
+    },
+    "9e8f51e2-c135-46b6-82c1-c8ae2b55f430": {
+        "name": "6420 - Advertising (e.g. Paid Ad Traffic)",
+        "description": "this is description",
+        "relationships": []
+    },
+    "039fb6c7-5fb9-46b5-a8c2-ced68794c56a": {
+        "name": "Employee",
+        "description": "this is description",
+        "relationships": [
+            {
+                "employee": [
+                    "6e8a057e-7566-4fef-b69c-e9f68a242452",
+                    "119a1c5d-9799-43bd-8ea9-f191f27170e1",
+                    "22ad7392-90c0-498e-96f2-f330cdc2307e",
+                    "166c46ce-74f3-4764-b198-31f757a22110"
+                ]
+            }
+        ]
+    },
+    "079c65a1-5e24-44d5-895d-d4a21aa3cb52": {
+        "name": "Contractor",
+        "description": "this is description",
+        "relationships": [
+            {
+                "contractor": [
+                    "e452591c-c8bb-4b66-93c6-952fd0629bb7",
+                    "bd3b4c84-2271-45dd-a541-7315bd21b433",
+                    "730bd21c-5ba1-4bef-93ec-d4335e484372",
+                    "0d814c41-768d-443e-a408-86b9783d5d7e"
+                ]
+            }
+        ]
+    },
+    "6e8a057e-7566-4fef-b69c-e9f68a242452": {
+        "name": "6120 - Employee Cost OPEX (W2s) - S&M",
+        "description": "this is description",
+        "relationships": []
+    },
+    "119a1c5d-9799-43bd-8ea9-f191f27170e1": {
+        "name": "6130 - Employee Cost OPEX (W2s) - R&D",
+        "description": "this is description",
+        "relationships": []
+    },
+    "22ad7392-90c0-498e-96f2-f330cdc2307e": {
+        "name": "6100 - Employee Cost OPEX (W2s) - Generic",
+        "description": "this is description",
+        "relationships": []
+    },
+    "166c46ce-74f3-4764-b198-31f757a22110": {
+        "name": "6160 - Employee Cost OPEX (W2s) - G&A",
+        "description": "this is description",
+        "relationships": []
+    },
+    "e452591c-c8bb-4b66-93c6-952fd0629bb7": {
+        "name": "6230 - Professional Services (1099s) - R&D",
+        "description": "this is description",
+        "relationships": []
+    },
+    "bd3b4c84-2271-45dd-a541-7315bd21b433": {
+        "name": "6220 - Professional Services (1099s) - S&M",
+        "description": "this is description",
+        "relationships": []
+    },
+    "730bd21c-5ba1-4bef-93ec-d4335e484372": {
+        "name": "6260 - Professional Services (1099s) - G&A (other than Legal)",
+        "description": "this is description",
+        "relationships": []
+    },
+    "0d814c41-768d-443e-a408-86b9783d5d7e": {
+        "name": "6200 - Professional Services (1099s) - Generic",
+        "description": "this is description",
+        "relationships": []
+    },
+    "ad5556ed-e50a-417f-b7f7-ffae88444e61": {
+        "name": "Cost Center",
+        "description": "this is description",
+        "relationships": [
+            {
+                "cost center": [
+                    "707242d3-8250-41e8-834e-b7d06c412040",
+                    "e3d57c57-6810-4eb7-ac3c-ec670fe0fb29"
+                ]
+            }
+        ]
+    },
+    "707242d3-8250-41e8-834e-b7d06c412040": {
+        "name": "Division",
+        "description": "this is description",
+        "relationships": []
+    },
+    "e3d57c57-6810-4eb7-ac3c-ec670fe0fb29": {
+        "name": "Department",
+        "description": "this is description",
+        "relationships": []
+    },
+    "c48a7ca3-1d51-4d12-ae7f-631c30cd057a": {
+        "name": "4 - Revenue",
+        "description": "this is description",
+        "relationships": [
+            {
+                "revenue": [
+                    "ffa57ae7-3a91-425b-b990-b9d9420b9ad5",
+                    "fd6a5eda-fa37-4f57-a675-9c557263b381",
+                    "8bc0a7d4-23fd-4af8-96fd-6e5af2b2204b"
+                ]
+            }
+        ]
+    },
+    "ffa57ae7-3a91-425b-b990-b9d9420b9ad5": {
+        "name": "4010 - Product Line",
+        "description": "this is description",
+        "relationships": []
+    },
+    "fd6a5eda-fa37-4f57-a675-9c557263b381": {
+        "name": "4999 - Uncategorized Income",
+        "description": "this is description",
+        "relationships": []
+    },
+    "8bc0a7d4-23fd-4af8-96fd-6e5af2b2204b": {
+        "name": "4900 - Other Revenue",
+        "description": "this is description",
+        "relationships": []
+    },
+    "ff3f9edf-b486-4979-91ca-c851f33ba8f8": {
+        "name": "7 - Non Op Income",
+        "description": "this is description",
+        "relationships": [
+            {
+                "non op income": [
+                    "15275a4e-f261-4202-a970-0e4b70cca775",
+                    "48bf3775-cbb8-47a3-ab4f-d2d8a158134c",
+                    "c0313279-acb2-48d6-b889-4c834dd44cc2"
+                ]
+            }
+        ]
+    },
+    "15275a4e-f261-4202-a970-0e4b70cca775": {
+        "name": "7900 - Other Non Op Income",
+        "description": "this is description",
+        "relationships": []
+    },
+    "48bf3775-cbb8-47a3-ab4f-d2d8a158134c": {
+        "name": "7820 - Grants",
+        "description": "this is description",
+        "relationships": []
+    },
+    "c0313279-acb2-48d6-b889-4c834dd44cc2": {
+        "name": "7810 - Interest Income",
+        "description": "this is description",
+        "relationships": []
+    },
+    "334aa660-d998-4cb2-b6dc-2e1e504ac3a2": {
+        "name": "8 - Non Op Expense",
+        "description": "this is description",
+        "relationships": [
+            {
+                "non op expense": [
+                    "64753737-8202-4d93-b707-57cffcb2f76c",
+                    "ddf6bbf7-5ab9-46fb-ba91-d23123b4f5e8",
+                    "2a4a3cac-911e-4bf6-9f02-933e3de193a6",
+                    "c336bfcd-3ce1-4858-b09b-8d8bb0c8a6b8",
+                    "0be00b47-db8c-4900-83ee-20d559a7b9dc"
+                ]
+            }
+        ]
+    },
+    "64753737-8202-4d93-b707-57cffcb2f76c": {
+        "name": "9000 - Corporate Tax",
+        "description": "this is description",
+        "relationships": []
+    },
+    "ddf6bbf7-5ab9-46fb-ba91-d23123b4f5e8": {
+        "name": "8990 - Other Non Op Expense",
+        "description": "this is description",
+        "relationships": []
+    },
+    "2a4a3cac-911e-4bf6-9f02-933e3de193a6": {
+        "name": "8910 - Interest Expense",
+        "description": "this is description",
+        "relationships": []
+    },
+    "c336bfcd-3ce1-4858-b09b-8d8bb0c8a6b8": {
+        "name": "8920 - Depreciation",
+        "description": "this is description",
+        "relationships": []
+    },
+    "0be00b47-db8c-4900-83ee-20d559a7b9dc": {
+        "name": "8970 - Startup Cost",
+        "description": "this is description",
+        "relationships": []
+    },
+    "b96652dd-573d-491a-a68b-2148b8c35163": {
+        "name": "P&L",
+        "description": "this is description",
+        "relationships": [
+            {
+                "p&l": [
+                    "c48a7ca3-1d51-4d12-ae7f-631c30cd057a",
+                    "5b49ad22-7a66-4817-a2e0-7ee2be4999fd",
+                    "f48435af-94e6-455f-a157-239b54388cd6",
+                    "ff3f9edf-b486-4979-91ca-c851f33ba8f8",
+                    "334aa660-d998-4cb2-b6dc-2e1e504ac3a2"
+                ]
+            }
+        ]
+    },
+    "b3dd1072-f821-474a-b268-23a0f86dd0c0": {
+        "name": "Department",
+        "description": "this is description",
+        "relationships": [
+            {
+                "department": [
+                    "91fcb7c4-3dd1-4a6f-9c98-aa54be5fd834",
+                    "d3f943f0-5a2e-4b61-ae4f-e8bc33e3b5f7",
+                    "7ea42ce3-8d49-46cd-8992-65d23e26e45e",
+                    "80826d7c-0f90-4b4a-a261-eae4bb565c35",
+                    "9d4bbd4e-942f-45b8-a462-9dc4712b4226",
+                    "d5374df8-e0a6-47cd-aa67-a0422b3bf280",
+                    "a1eb1565-e437-414c-9d82-ca5b7d7f4e19"
+                ]
+            }
+        ]
+    },
+    "91fcb7c4-3dd1-4a6f-9c98-aa54be5fd834": {
+        "name": "Marketing",
+        "description": "this is description",
+        "relationships": [
+            {
+                "employee": [
+                    "f855665d-093b-47d5-8d65-6601494a5006"
+                ]
+            }
+        ]
+    },
+    "d3f943f0-5a2e-4b61-ae4f-e8bc33e3b5f7": {
+        "name": "Sales",
+        "description": "this is description",
+        "relationships": [
+            {
+                "employee": [
+                    "70c5ec32-9140-4dfe-a137-7bcc765f5b33"
+                ]
+            }
+        ]
+    },
+    "7ea42ce3-8d49-46cd-8992-65d23e26e45e": {
+        "name": "Engineering",
+        "description": "this is description",
+        "relationships": [
+            {
+                "employee": [
+                    "011c11da-a1ea-4b90-aae7-9aae7a88c111"
+                ]
+            }
+        ]
+    },
+    "80826d7c-0f90-4b4a-a261-eae4bb565c35": {
+        "name": "Customer Support",
+        "description": "this is description",
+        "relationships": [
+            {
+                "employee": [
+                    "4e5c74ae-cff8-4df1-945f-d3b337f0946a"
+                ]
+            }
+        ]
+    },
+    "9d4bbd4e-942f-45b8-a462-9dc4712b4226": {
+        "name": "Finance",
+        "description": "this is description",
+        "relationships": [
+            {
+                "employee": [
+                    "d709ffd5-3539-4d51-aae0-d22bf2b26bd0"
+                ]
+            }
+        ]
+    },
+    "d5374df8-e0a6-47cd-aa67-a0422b3bf280": {
+        "name": "HR",
+        "description": "this is description",
+        "relationships": [
+            {
+                "employee": [
+                    "54191457-79f5-473a-ba3e-a4d63a776b53"
+                ]
+            }
+        ]
+    },
+    "a1eb1565-e437-414c-9d82-ca5b7d7f4e19": {
+        "name": "Legal",
+        "description": "this is description",
+        "relationships": []
+    },
+    "f855665d-093b-47d5-8d65-6601494a5006": {
+        "name": "Employee",
+        "description": "this is description",
+        "relationships": []
+    },
+    "70c5ec32-9140-4dfe-a137-7bcc765f5b33": {
+        "name": "Employee",
+        "description": "this is description",
+        "relationships": []
+    },
+    "011c11da-a1ea-4b90-aae7-9aae7a88c111": {
+        "name": "Employee",
+        "description": "this is description",
+        "relationships": []
+    },
+    "4e5c74ae-cff8-4df1-945f-d3b337f0946a": {
+        "name": "Employee",
+        "description": "this is description",
+        "relationships": []
+    },
+    "d709ffd5-3539-4d51-aae0-d22bf2b26bd0": {
+        "name": "Employee",
+        "description": "this is description",
+        "relationships": []
+    },
+    "54191457-79f5-473a-ba3e-a4d63a776b53": {
+        "name": "Employee",
+        "description": "this is description",
+        "relationships": []
+    },
+    "542cded6-4b98-4ec1-b406-012f316ace64": {
+        "name": "KPI",
+        "description": "this is description",
+        "relationships": [
+            {
+                "kpi": [
+                    "95398483-99ae-4140-ad92-8d1c87d24038",
+                    "dcf047ac-fb9d-484d-854e-c8744e628342",
+                    "272ecaff-4aae-4c8e-9536-29ed20bfcde3",
+                    "fa1c1bf6-b3cd-426c-8eb4-4dcafcce9179",
+                    "cd4ae6e3-d7e4-48d8-a74d-25e473d22b0a"
+                ]
+            }
+        ]
+    },
+    "dcf047ac-fb9d-484d-854e-c8744e628342": {
+        "name": "Churn Rate",
+        "description": "this is description",
+        "relationships": []
+    },
+    "272ecaff-4aae-4c8e-9536-29ed20bfcde3": {
+        "name": "CAC",
+        "description": "this is description",
+        "relationships": []
+    },
+    "fa1c1bf6-b3cd-426c-8eb4-4dcafcce9179": {
+        "name": "CLTV",
+        "description": "this is description",
+        "relationships": []
+    },
+    "cd4ae6e3-d7e4-48d8-a74d-25e473d22b0a": {
+        "name": "Revenue Per Employee",
+        "description": "this is description",
+        "relationships": []
+    },
+    "b1737919-85dc-4b19-be2a-185725353375": {
+        "name": "Employee",
+        "description": "this is description",
+        "relationships": [
+            {
+                "employee": [
+                    "d728d33d-30b3-448e-92ad-d6071086b262",
+                    "b69369fb-63e6-42b2-8898-b5d869343db1",
+                    "ff338409-88bb-4d62-8e30-30f419d9df2b",
+                    "20245fd1-3042-4a1b-b491-13ee5b3aa517",
+                    "9a278f95-00c9-4fc2-abba-9ee7cd0e5325"
+                ]
+            }
+        ]
+    },
+    "d728d33d-30b3-448e-92ad-d6071086b262": {
+        "name": "Location",
+        "description": "this is description",
+        "relationships": []
+    },
+    "b69369fb-63e6-42b2-8898-b5d869343db1": {
+        "name": "Role",
+        "description": "this is description",
+        "relationships": []
+    },
+    "ff338409-88bb-4d62-8e30-30f419d9df2b": {
+        "name": "Department",
+        "description": "this is description",
+        "relationships": []
+    },
+    "20245fd1-3042-4a1b-b491-13ee5b3aa517": {
+        "name": "Product Line",
+        "description": "this is description",
+        "relationships": []
+    },
+    "9a278f95-00c9-4fc2-abba-9ee7cd0e5325": {
+        "name": "Reporting Relationship",
+        "description": "this is description",
+        "relationships": []
+    },
+    "73b7771b-4a14-4809-8391-c148fecacb5b": {
+        "name": "Country",
+        "description": "this is description",
+        "relationships": [
+            {
+                "country": [
+                    "81ab3f1c-45b8-4f9e-9d96-217bc0bf0023"
+                ]
+            }
+        ]
+    },
+    "81ab3f1c-45b8-4f9e-9d96-217bc0bf0023": {
+        "name": "Currency",
+        "description": "this is description",
+        "relationships": []
+    },
+    "9fd4bf22-ff3a-4bb2-b2d3-1fe55307c1f0": {
+        "name": "Role",
+        "description": "this is description",
+        "relationships": [
+            {
+                "role": [
+                    "84f9e59d-7f21-49c5-8165-3710d439fc71",
+                    "4fbde067-5f44-4bce-beac-6ca4bd628cb3"
+                ]
+            }
+        ]
+    },
+    "84f9e59d-7f21-49c5-8165-3710d439fc71": {
+        "name": "Engineer",
+        "description": "this is description",
+        "relationships": []
+    },
+    "4fbde067-5f44-4bce-beac-6ca4bd628cb3": {
+        "name": "Account Executive",
+        "description": "this is description",
+        "relationships": []
+    }
+}

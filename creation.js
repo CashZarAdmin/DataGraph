@@ -32,6 +32,7 @@ function addEdge(fromId, toId, type) {
         from: fromId,
         to: toId,
         label: type,
+        arrows: 'to', 
         color: getColor(type)
     });
 }
