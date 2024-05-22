@@ -1,0 +1,72 @@
+INSERT INTO operational_entities (name, description, attributes) VALUES ('Employee', 'Operational entity representing employees', '{"department": "Engineering"}');
+
+{
+    "1": {
+        "name": "Employee",
+        "description": "Individuals working for the company",
+        "type": 2, // operational object
+        "relationships": [
+            {
+                "department": [
+                    4
+                ]
+            },
+            {
+                "activity": [
+                    9
+                ]
+            }
+        ]
+    },
+    "4": {
+        "name": "Department",
+        "description": "Company departments",
+        "type": 2, // operational object
+        "relationships": []
+    },
+    "9": {
+        "name": "Employee Activvity",
+        "type": 3, // operational object
+        "description": "Impact of employees on financial",
+        "relationships": [
+            {
+                "cogs": [
+                    12
+                ],
+                "opex": [
+                    13
+                ]
+            }
+        ],
+        "magnitude": 1.0
+    },
+    "12": {
+        "name": "COGS",
+        "description": "cost of goods and services",
+        "type": 1, // financial object
+        "relationships": []
+    },
+    "13": {
+        "name": "OPEX",
+        "description": "operating expense",
+        "type": 1, // financial object
+        "relationships": []
+    },
+    "14": {
+        "name": "P&L",
+        "description": "profit and loss statement",
+        "type": 1, // financial object
+        "relationships": [
+            {
+                "cogs": [
+                    12
+                ]
+            },
+            {
+                "opex": [
+                    13
+                ]
+            }
+        ]
+    }
+}
