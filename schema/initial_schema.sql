@@ -10,10 +10,21 @@ CREATE TABLE types (
     description TEXT
 );
 
+
 CREATE TABLE operational_entities (
     id VARCHAR(20) PRIMARY KEY,
-    entity_type INT REFERENCES types(id),
+    entity_type VARCHAR(20) REFERENCES types(id),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    value VARCHAR(256) NOT NULL,
+    attributes JSONB NOT NULL
+);
+
+CREATE TABLE type_relationships (
+    id VARCHAR(20) PRIMARY KEY,
+    node1_id VARCHAR(20) REFERENCES types(id),
+    node2_id VARCHAR(20) REFERENCES types(id),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    modified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     attributes JSONB NOT NULL
 );
 
@@ -42,29 +53,29 @@ INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUE
 
 INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('20240517129d8c27b29d','2024051712d2d2d2d2d2','{"id":"6a447c78-cb8b-4076-b4ab-b1c64a3e16d2","first_name":"Farzad","last_name":"Qassemi","employee_id":2}');
 
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120e5b657e0d1','20240517129d8c27b29d','2024052109fc299c6512','{}');
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('202405212062ef2f90c6','20240517129d8c27b29d','2024052109b539eeda6c','{}');
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120218369a428','20240517129d8c27b29d','20240521099b61410360','{}');
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120660cbc2f9c','20240517129d8c27b29d','2024052119a776c41667','{}');
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120be9ade6e42','20240517129d8c27b29d','202405212063954f1db3','{}');
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120833516697c','20240517129d8c27b29d','2024052121b6f9f70a7d','{}');
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('202405212104680449e0','20240517129d8c27b29d','202405212048f4134e92','{}');
+INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120e5b657e0d2','20240517129d8c27b29d','2024052109fc299c6512','{}');
+INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('202405212062ef2f90c7','20240517129d8c27b29d','2024052109b539eeda6c','{}');
+INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120218369a438','20240517129d8c27b29d','20240521099b61410360','{}');
+INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120660cbc2g9c','20240517129d8c27b29d','2024052119a776c41667','{}');
+INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120be9ade6e52','20240517129d8c27b29d','202405212063954f1db3','{}');
+INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120833516698c','20240517129d8c27b29d','2024052121b6f9f70a7d','{}');
+INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('202405212104680448e0','20240517129d8c27b29d','202405212048f4134e92','{}');
 
 
 -- employee to employment type relationship
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521192c3e82fd29','2024051712d2d2d2d2d2','202405210790db1ba3fe','{}');
--- employee to role relationship
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521209ab12d0935','2024051712d2d2d2d2d2','2024052107c6ba0f964f','{}');
--- employee to position relationship
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521207e855cf4e9','2024051712d2d2d2d2d2','2024052109a383519ba0','{}');
--- employee to department relationship
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120eb2398a1fa','2024051712d2d2d2d2d2','202405211466f89695af','{}');
--- employee to salary relationship
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120340b271d49','2024051712d2d2d2d2d2','202405210745290b68e8','{}');
--- employee to status relationship
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120686a3b01c6','2024051712d2d2d2d2d2','202405211372bb0f2623','{}');
--- employee to location
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521200c221050d7','2024051712d2d2d2d2d2','202405212026b95d208b','{}');
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521192c3e82fd29','2024051712d2d2d2d2d2','202405210790db1ba3fe','{}');
+-- employee to role type relationship
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521209ab12d0935','2024051712d2d2d2d2d2','2024052107c6ba0f964f','{}');
+-- employee to position type relationship
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521207e855cf4e9','2024051712d2d2d2d2d2','2024052109a383519ba0','{}');
+-- employee to department type relationship
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120eb2398a1fa','2024051712d2d2d2d2d2','202405211466f89695af','{}');
+-- employee to compensation type relationship
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120340b271d49','2024051712d2d2d2d2d2','202405210745290b68e8','{}');
+-- employee to status  type relationship
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('2024052120686a3b01c6','2024051712d2d2d2d2d2','202405211372bb0f2623','{}');
+-- employee to location type relationship
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521200c221050d7','2024051712d2d2d2d2d2','202405212026b95d208b','{}');
 
 
 INSERT INTO types (id, version, name, description, attributes) VALUES ('202405210790db1ba3fe', 1,'EmployementType','employement type schema','{"id":"cbbf4cc6-4459-4236-bb0e-fe0d7d82b46c","name":"EmployementType","description":"Employee Type Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"EmploymentType","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the employment type."},"type":{"type":"string","enum":["full_time","part_time","contractor"],"description":"The type of employment which can be full-time, part-time, or contractor."}},"required":["id","type"]}}');
@@ -84,6 +95,10 @@ INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('20240521
 INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405210982d3a6f78c','2024052109a383519ba0','{"id":"8c444d7e-c022-471b-bf07-e78b04f9aa62","title":"Fractional CFO","description":"Part-time Chief Financial Officer providing financial strategy and oversight.","level":"80"}');
 INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052109d32e4969a7','2024052109a383519ba0','{"id":"55e95499-bd36-4205-8ee0-d0705567c4e8","title":"Customer Support","description":"Assists customers by providing product information and resolving issues.","level":"50"}');
 INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('20240521134f390d827d','2024052109a383519ba0','{"id":"c945a2b1-b831-4d70-94bc-f8af91978bc8","title":"DevOps Engineer","description":"Responsible for designing, developing, and maintaining software systems.","level":"60"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('20240521134f390d827d','2024052109a383519ba0','{"id":"c945a2b1-b831-4d70-94bc-f8af91978bc8","title":"Account Executive","description":"Responsible for selling and managing customer.","level":"60"}');
+
+
+
 
 INSERT INTO types (id, version, name, description, attributes) VALUES ('202405211441e5c869fe',1,'Product','Product schema','{"id":"5b91245b-d20e-4fbf-91eb-d6ffbae82db4","name":"Product","description":"Product Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Product","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the product."},"name":{"type":"string","description":"Name of the product."},"description":{"type":"string","description":"Description of the product."},"amount":{"type":"object","properties":{"value":{"type":"number","description":"The price value of the product."},"currency":{"type":"string","description":"Currency of the product price."}},"required":["value","currency"]}},"required":["id","name","amount"]}}');
 INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052117fc3cf686ed','202405211441e5c869fe','{"id":"408faeee-deed-4dee-9bac-c204ed896937","name":"Data and Trending Insight, and Anomaly Detection","description":"Provides insights based on historical and actual data, including anomaly detection, trending insights, and variance analysis.","amount":{"value":100,"currency":"USD"}}');
@@ -99,9 +114,111 @@ INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('20240521
 INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('20240521182e198ed9db','2024052113cf08be60f8','{"id":"e80f3df2-26e1-4f5f-a54f-07065e026860","name":"Prediction and Operation Execution Subscription","description":"Monthly subscription for Prediction and Scenario Planning and Operation Execution with a 10% discount.","amount":{"value":3600,"currency":"USD"},"frequency":"monthly"}');
 INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052118d7737fa0d5','2024052113cf08be60f8','{"id":"19a94238-10ef-4d88-924e-34084f64d526","name":"All-Inclusive Subscription","description":"Monthly subscription for Data Insight and Anomaly Detection, Prediction and Scenario Planning, and Operation Execution with a 15% discount.","amount":{"value":5100,"currency":"USD"},"frequency":"monthly"}');
 
+-- product to subscription type relationship
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521203609d9a488','202405211441e5c869fe','2024052113cf08be60f8','{}');
 
--- product to subscription relationship
-INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521203609d9a488','202405211441e5c869fe','2024052113cf08be60f8','{}');
+-- connected position to department
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521203609d9a498','2024052109a383519ba0','202405211466f89695af','{}');
+
+-- position to customer (account executive is connected to customer)
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521203609d9b598','2024052109a383519ba0', '2024052113b4a4026051','{}');
+-- INSERT INTO operational_relationships (id, node1_id, node2_id, attributes) VALUES ('202405212104080448e0','','','{}');
+
+-- position to location (account executive is operating in location)
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521203608f9b598','2024052113b4a4026051','202405212026b95d208b','{}');
+
+-- employee has reporting relationship
+-- vendors sell items
+INSERT INTO types (id, version, name, description, attributes) VALUES ('202405212026e85d208b',1,'Item','Item Schema','{"id":"be328af6-9a2d-4d4c-a371-073ffc10b7f3","name":"Item","description":"Vendors sell Item","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Item","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the item."},"name":{"type":"string","description":"Name of the item."},"description":{"type":"string","description":"Description of the item."},"price":{"type":"object","properties":{"value":{"type":"number","description":"Price value of the item."},"currency":{"type":"string","description":"Currency of the price."}},"required":["value","currency"],"description":"Price of the item."}},"required":["id","name","price"]}}');
+-- INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1db3','202405212026e85d208b','
+
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1d01','202405212026e85d208b','{"id":"be328bf1-9a2d-4d4c-a371-173ffc10b0f3","name":"Google Cloud Service","description":"Secure and durable object storage service for Google Cloud.","price":{"value":0.026,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954fae01','202405212026e85d208b','{"id":"be328cf1-9a2d-4d4c-a371-273ffc10b0f3","name":"groq.com","description":"Secure and durable object storage service for Google Cloud.","price":{"value":0.026,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954fac01','202405212026e85d208b','{"id":"be328df1-9a2d-4d4c-a371-373ffc10b0f3","name":"replicate.com","description":"Secure and durable object storage service for Google Cloud.","price":{"value":0.026,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1da2','202405212026e85d208b','{"id":"be328af2-9a2d-4d4c-a371-473ffc10b1f3","name":"Amazon S3","description":"Scalable storage in the Amazon Web Services cloud.","price":{"value":0.023,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1d1a','202405212026e85d208b','{"id":"be328af2-9a2d-4d4c-a371-573ffc10b1f3","name":"Amazon EC2","description":"Scalable compute in the Amazon Web Services cloud.","price":{"value":0.023,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1d02','202405212026e85d208b','{"id":"be328af2-9a2d-4d4c-a371-673ffc10b1f3","name":"Amazon Bedrock","description":"Scalable GPU for training and query execution of in the Amazon Web Services cloud.","price":{"value":0.023,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1d03','202405212026e85d208b','{"id":"be328af3-9a2d-4d4c-a371-773ffc10b2f3","name":"Google Workspace Business Standard","description":"Integrated suite of secure, cloud-native collaboration and productivity apps.","price":{"value":12,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1d04','202405212026e85d208b','{"id":"be328af4-9a2d-4d4c-a371-873ffc10b3f3","name":"Zoom Pro","description":"High-quality video and audio conferencing solution.","price":{"value":14.99,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1d05','202405212026e85d208b','{"id":"be328af5-9a2d-4d4c-a371-973ffc10b4f3","name":"GitHub Enterprise","description":"Development platform for collaboration and code management.","price":{"value":21,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1db0','202405212026e85d208b','{"id":"be328af7-9a2d-4d4c-a371-a73ffc10b5f3","name":"Apple MacBook Pro","description":"High-performance laptop for software development.","price":{"value":2399,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1db6','202405212026e85d208b','{"id":"be328af8-9a2d-4d4c-a371-b73ffc10b6f3","name":"WeWork Office Space","description":"Flexible workspace solutions for teams of all sizes.","price":{"value":500,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1db7','202405212026e85d208b','{"id":"be328af9-9a2d-4d4c-a371-c73ffc10a7f3","name":"Temporal.IO Cloud","description":"Microservices orchestration platform.","price":{"value":150,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1db8','202405212026e85d208b','{"id":"be328af0-9a2d-4d4c-a371-d73ffc10b8f3","name":"Microsoft Azure VM","description":"Virtual machine instances on Microsoft Azure.","price":{"value":0.045,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1db9','202405212026e85d208b','{"id":"be328afa-9a2d-4d4c-a371-e73ffc10b9f3","name":"Salesforce CRM","description":"Customer relationship management software.","price":{"value":150,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f11b0','202405212026e85d208b','{"id":"be328afb-9a2d-4d4c-a371-f73ffc10b7a3","name":"HubSpot Marketing Hub","description":"Marketing automation software.","price":{"value":50,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f11b3','202405212026e85d208b','{"id":"be328afc-9a2d-4d4c-a371-0a3afc10b7f3","name":"Nestorbird Analytics","description":"Advanced analytics and reporting tool.","price":{"value":200,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f12b3','202405212026e85d208b','{"id":"be328afd-9a2d-4d4c-a371-0b3bfc10b7f3","name":"Slack Plus Plan","description":"Team collaboration and communication tool.","price":{"value":12.5,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f24b3','202405212026e85d208b','{"id":"be328afe-9a2d-4d4c-a371-0c3cfc10b7f3","name":"Jira Software","description":"Project management and issue tracking software.","price":{"value":7,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f14b3','202405212026e85d208b','{"id":"be328aff-9a2d-4d4c-a371-0d3dfc10b7f3","name":"Confluence Standard Plan","description":"Team collaboration and documentation software.","price":{"value":10,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f17b3','202405212026e85d208b','{"id":"be328a26-9a2d-4d4c-a371-0e3fcc10b7f3","name":"Dropbox Business","description":"Cloud storage and file sharing solution.","price":{"value":12.5,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f19b3','202405212026e85d208b','{"id":"be328a46-9a2d-4d4c-a371-0f1ffc10b7f3","name":"SurveyMonkey Team Advantage","description":"Survey creation and analysis tool.","price":{"value":25,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f2db3','202405212026e85d208b','{"id":"be328a56-9a2d-4d4c-a371-012ffc10b7f3","name":"UI Development Contractor","description":"Contractor services for user interface development.","price":{"value":10000,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f3db3','202405212026e85d208b','{"id":"be328a66-9a2d-4d4c-a371-02affc10b7f3","name":"Market Research Services","description":"Professional market research services.","price":{"value":8000,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f4db3','202405212026e85d208b','{"id":"be328a76-9a2d-4d4c-a371-034ffc10b7f3","name":"Salesforce Sales Cloud","description":"Sales automation and CRM software.","price":{"value":125,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f5db3','202405212026e85d208b','{"id":"be328a86-9a2d-4d4c-a371-045ffc10b7f3","name":"CodeGuard Developer Backup","description":"Automated backups for developers.","price":{"value":10,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f7db3','202405212026e85d208b','{"id":"be328aa6-9a2d-4d4c-a371-057ffc10b7f3","name":"Evernote Teams","description":"Note-taking and organization software for teams.","price":{"value":14.99,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f9db3','202405212026e85d208b','{"id":"be328ac6-9a2d-4d4c-a371-069ffc10b7f3","name":"Zendesk Support","description":"Customer support ticketing system.","price":{"value":49,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1ab3','202405212026e85d208b','{"id":"be338af6-9a2d-4d4c-a371-071fbc10b7f3","name":"QuickBooks Online Plus","description":"Online accounting software.","price":{"value":40,"currency":"USD"}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063554f1bb3','202405212026e85d208b','{"id":"be358af6-9a2d-4d4c-a371-072fdc10b7f3","name":"Notion Team Plan","description":"All-in-one workspace for notes, tasks, and projects.","price":{"value":8,"currency":"USD"}}');
+
+
+
+
+-- location
+INSERT INTO types (id, version, name, description, attributes) VALUES ('202405212026b95d208b',1,'Location','Location Schema','{"id":"be39fff6-9a2d-4d4c-a371-073ffc10b7f3","name":"Location","description":"Location Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Location","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the location."},"name":{"type":"string","description":"Name of the location."},"address":{"type":"string","description":"Address of the location."},"city":{"type":"string","description":"City of the location."},"state":{"type":"string","description":"State of the location."},"country":{"type":"string","description":"Country of the location."},"postal_code":{"type":"string","description":"Postal code of the location."}},"required":["id","name","address","city","state","country","postal_code"]}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1db3','202405212026b95d208b','{"id":"0c5b3cf8-ba61-4d64-9a9f-1b7e9fb598c8","name":"Canada Office","address":"295 Hagey Blvd","city":"Waterloo","state":"ON","country":"Canada","postal_code":"N2L6R5"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052120bf4726fe0c','202405212026b95d208b','{"id":"58ede429-454e-49e7-88d0-3cb106ce138c","name":"US Office","address":"2018 156th Ave NE","city":"Bellevue","state":"WA","country":"USA","postal_code":"98007"}');
+
+-- add employee to region/city/state/country
+
+-- location has region
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521203608fb7598','202405212026b95d208b','202405211466f84755af','{}');
+-- location has state
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521203608fb7554','202405212026b95d208b','202405211466f83765af','{}');
+-- location has city
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521203608fb5654','202405212026b95d208b','202405211466f82785af','{}');
+-- location has country
+INSERT INTO type_relationships (id, node1_id, node2_id, attributes) VALUES ('20240521203608ae5654','202405212026b95d208b','202405211466f81795af','{}');
+
+
+INSERT INTO types (id, version, name, description, attributes) VALUES ('202405211466f84755af',1,'Region','Region Schema','{"id":"39a76a7c-c531-48be-b298-1545a9a2a324","name":"Region","description":"this represent region","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Region","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the region."},"name":{"type":"string","description":"Name of the region."}},"required":["id","name"]}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405211466f84145bf','202405211466f84755af','{"id":"39a76a7c-c531-48be-b298-15a59a23424","name":"Northeast"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405211466f84245cf','202405211466f84755af','{"id":"39a76a7c-c531-48be-b298-154a79a23424","name":"Midwest"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405211466f84345df','202405211466f84755af','{"id":"39a76a7c-c531-48be-b298-154a89a23424","name":"South"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405211466f84445ef','202405211466f84755af','{"id":"39a76a7c-c531-48be-b298-154a99a23424","name":"West"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405211466f84545ff','202405211466f84755af','{"id":"39a76a7c-c531-48be-b298-1581a9a23424","name":"North America"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405211466f84645gf','202405211466f84755af','{"id":"39a76a7c-c531-48be-b298-154929a23424","name":"Europe"}');
+
+INSERT INTO types (id, version, name, description, attributes) VALUES ('202405211466f83765af',1,'State','State Schema','{"id":"39a76a7c-c531-48be-b298-1545a9a2a324","name":"State","description":"this represent State","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"State","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the state."},"name":{"type":"string","description":"Name of the state."}},"required":["id","name"]}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405211466e94245ba','202405211466f83765af','{"id":"39a76a7c-c531-41b1-b298-15a59a23424","name":"New York"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405211466e94345bb','202405211466f83765af','{"id":"39a76a7c-c531-42ba-b298-15a59a23424","name":"Illinois"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405211466e94445bc','202405211466f83765af','{"id":"39a76a7c-c531-43bb-b298-15a59a23424","name":"Texas"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405211466e94545bd','202405211466f83765af','{"id":"39a76a7c-c531-44bc-b298-15a59a23424","name":"Massachusetts"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405211466e94645be','202405211466f83765af','{"id":"39a76a7c-c531-45bd-b298-15a59a23424","name":"Ohio"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405211466e94745b1','202405211466f83765af','{"id":"39a76a7c-c531-46b6-b298-15a59a23424","name":"Florida"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405211466e94845b2','202405211466f83765af','{"id":"39a76a7c-c531-47b8-b298-15a59a23424","name":"California"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405211466e94945b3','202405211466f83765af','{"id":"39a76a7c-c531-49b9-b298-15a59a23424","name":"Washington"}');
+
+
+INSERT INTO types (id, version, name, description, attributes) VALUES ('202405211466f82785af',1,'City','City Schema','{"id":"39a76a7c-c531-48be-b298-1545a9a62224","name":"City","description":"this represent City","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"City","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the city."},"name":{"type":"string","description":"Name of the city."}},"required":["id","name"]}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052119b576d51667','202405211466f82785af','{"id":"25e1228a-88db-197a-a102-1ef4d826b1d4","name":"Boston"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052119c676d51667','202405211466f82785af','{"id":"25e1228a-88db-297b-a102-1ef4d826b1d4","name":"Chicago"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052119d876d51667','202405211466f82785af','{"id":"25e1228a-88db-397c-a102-1ef4d826b1d4","name":"Cleveland"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052119e976d51667','202405211466f82785af','{"id":"25e1228a-88db-597d-a102-1ef4d826b1d4","name":"Houston"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052119f076d51667','202405211466f82785af','{"id":"25e1228a-88db-697e-a102-1ef4d826b1d4","name":"Miami"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('20240521191176d51667','202405211466f82785af','{"id":"25e1228a-88db-798c-a102-1ef4d826b1d4","name":"Seattle"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('20240521192276d51667','202405211466f82785af','{"id":"25e1228a-88db-899c-a102-1ef4d826b1d4","name":"New York City"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('20240521193376d51667','202405211466f82785af','{"id":"25e1228a-88db-990c-a102-1ef4d826b1d4","name":"Los Angeles"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('20240521194476d51667','202405211466f82785af','{"id":"25e1228a-88db-091c-a102-1ef4d826b1d4","name":"San Francisco"}');
+
+
+INSERT INTO types (id, version, name, description, attributes) VALUES ('202405211466f81795af',1,'Country','Country Schema','{"id":"39a76a7c-c531-48be-b298-1545a9a2a324","name":"Country","description":"this represent Country","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Country","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the country."},"name":{"type":"string","description":"Name of the country."}},"required":["id","name"]}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052119a776c41967','202405211466f81105af','{"id":"25e1228a-18db-497c-a102-1ef4d656b1d4","name":"United States"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052119a776c41967','202405211466f81215af','{"id":"25e1228a-28db-497c-a102-1ef4d656b1d4","name":"Canada"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052119a776c41967','202405211466f81325af','{"id":"25e1228a-38db-497c-a102-1ef4d656b1d4","name":"Germany"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052119a776c41967','202405211466f81435af','{"id":"25e1228a-48db-497c-a102-1ef4d656b1d4","name":"United Kingdom"}');
+
 
 -- INSERT INTO types (id, version, name, description, attributes) VALUES ('2024052114415a051022',1,'Product Line','Product Line schema','{"id":"406a18f9-dbee-4a27-bab9-7d0ca3c7d091","name":"Product Line","description":"Product Line Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"ProductLine","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the product line."},"name":{"type":"string","description":"Name of the product line."},"description":{"type":"string","description":"Description of the product line."}},"required":["id","name"]}}');
 -- INSERT INTO types (id, version, name, description, attributes) VALUES ('20240521148dd1d2cbad',1,'Division','Division Schema','{"id":"78887397-50ca-47c9-b89a-3baabdad77e2","name":"Division","description":"this represent Divisions","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Division","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the division."},"name":{"type":"string","description":"Name of the division."},"description":{"type":"string","description":"Description of the division."}},"required":["id","name"]}}');
@@ -113,29 +230,63 @@ INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('20240521
 INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052119d33ae3a8fb','202405211466f89695af','{"id":"52bf1203-dc51-49ce-b9d1-42f65ee8b8f6","name":"General Management"}');
 
 
-
 -- INSERT INTO types (id, version, name, description, attributes) VALUES ('20240521141544fc8c85',1,'Function','Function Schema','{"id":"d127d0c4-deb5-4cbb-a5f6-61f87d96121b","name":"Function","description":"this represents Functions","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Function","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the function."},"name":{"type":"string","description":"Name of the function."},"description":{"type":"string","description":"Description of the function."}},"required":["id","name"]}}');
 INSERT INTO types (id, version, name, description, attributes) VALUES ('202405210745290b68e8',1,'Compensation','Compensation Schema','{"id":"1db6ebc9-ced6-4b07-b1a5-e98910248526","name":"Compensation","description":"Compensation Schema for an Employee","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Compensation","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the compensation entry."},"base_salary":{"type":"object","properties":{"value":{"type":"number","description":"Base salary amount."},"currency":{"type":"string","description":"Currency of the base salary."}},"required":["value","currency"],"description":"Base salary amount and currency."},"effective_date":{"type":"string","format":"date","description":"Date when the compensation becomes effective."}},"required":["id","base_salary"]}}');
 INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052120df754eaabf','202405210745290b68e8','{"id":"2d08c51f-fe57-4ac8-8f55-403cd4cec744","base_salary":{"value":0,"currency":"USD"},"effective_date":"2024-01-01"}');
 INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052121b6f9f70a7d','202405210745290b68e8','{"id":"85586eda-470a-4e13-84a7-b0c4978f2fcc","base_salary":{"value":0,"currency":"CAD"},"effective_date":"2024-01-01"}');
 
 
-INSERT INTO types (id, version, name, description, attributes) VALUES ('202405211372bb0f2623',1,'Status','Status Schema','{"id":"18302a70-6efa-455c-9f87-51c1827b5809","name":"Status","description":"Status Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Status","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for this object"},"status":{"type":"string","enum":["active","inactive","terminated","pending","expired","cancelled"],"description":"Status of this object."}},"required":["id","status"]}}');
+INSERT INTO types (id, version, name, description, attributes) VALUES ('202405211372bb0f2623',1,'Status','Status Schema','{"id":"18302a70-6efa-455c-9f87-51c1827b5809","name":"Status","description":"Status Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Status","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for this object"},"status":{"type":"string","enum":["active","inactive","terminated"],"description":"Status of this object."}},"required":["id","status"]}}');
 INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212048f4134e92','202405211372bb0f2623','{"id":"d8298843-07dc-430c-90d2-30c40f7d2a89","status":"active"}');
 INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('20240521203061f3b29f','202405211372bb0f2623','{"id":"5bba6c9a-0d3a-4edb-b8b5-5ad1ab96263b","status":"inactive"}');
 INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052120ef5fa4eca6','202405211372bb0f2623','{"id":"352c05fa-ed76-413a-856b-a5e2a4b771ac","status":"terminated"}');
 
 
-INSERT INTO types (id, version, name, description, attributes) VALUES ('20240521138aa006fd4e',1,'Company','Company Schema','{"id":"45d37b9e-67ea-4182-98f8-54479899926f","name":"Company","description":"Company Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Company","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the company."},"name":{"type":"string","description":"Name of the company."},"description":{"type":"string","description":"Description of the company."},"industry":{"type":"string","description":"Industry in which the company operates."}},"required":["id","name","industry"]}}');
-INSERT INTO types (id, version, name, description, attributes) VALUES ('2024052113cb5d43b7d1',1,'Legal Entity','Legal Entity Schema','{"id":"272efaba-a834-40dd-8fe9-b198f1dc9952","name":"Legal Entity","description":"Legal Entity Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Entity","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the entity."},"name":{"type":"string","description":"Name of the entity."},"description":{"type":"string","description":"Description of the entity."},"entity_type":{"type":"string","description":"Type of the entity."},"created_at":{"type":"string","format":"date-time","description":"Timestamp when the entity was created."},"updated_at":{"type":"string","format":"date-time","description":"Timestamp when the entity was last updated."}},"required":["id","name","entity_type","created_at","updated_at"]}}');
+-- INSERT INTO types (id, version, name, description, attributes) VALUES ('20240521138aa006fd4e',1,'Company','Company Schema','{"id":"45d37b9e-67ea-4182-98f8-54479899926f","name":"Company","description":"Company Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Company","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the company."},"name":{"type":"string","description":"Name of the company."},"description":{"type":"string","description":"Description of the company."},"industry":{"type":"string","description":"Industry in which the company operates."}},"required":["id","name","industry"]}}');
+-- INSERT INTO types (id, version, name, description, attributes) VALUES ('2024052113cb5d43b7d1',1,'Legal Entity','Legal Entity Schema','{"id":"272efaba-a834-40dd-8fe9-b198f1dc9952","name":"Legal Entity","description":"Legal Entity Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Entity","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the entity."},"name":{"type":"string","description":"Name of the entity."},"description":{"type":"string","description":"Description of the entity."},"entity_type":{"type":"string","description":"Type of the entity."},"created_at":{"type":"string","format":"date-time","description":"Timestamp when the entity was created."},"updated_at":{"type":"string","format":"date-time","description":"Timestamp when the entity was last updated."}},"required":["id","name","entity_type","created_at","updated_at"]}}');
 
-INSERT INTO types (id, version, name, description, attributes) VALUES ('202405212026b95d208b',1,'Location','Location Schema','{"id":"be39fff6-9a2d-4d4c-a371-073ffc10b7f3","name":"Location ","description":"Location Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Location","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the location."},"name":{"type":"string","description":"Name of the location."},"address":{"type":"string","description":"Address of the location."},"city":{"type":"string","description":"City of the location."},"state":{"type":"string","description":"State of the location."},"country":{"type":"string","description":"Country of the location."},"postal_code":{"type":"string","description":"Postal code of the location."}},"required":["id","name","address","city","state","country","postal_code"]}}');
-INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('202405212063954f1db3','202405212026b95d208b','{"id":"0c5b3cf8-ba61-4d64-9a9f-1b7e9fb598c8","name":"Canada Office","address":"295 Hagey Blvd","city":"Waterloo","state":"ON","country":"Canada","postal_code":"N2L6R5"}');
-INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052120bf4726fe0c','202405212026b95d208b','{"id":"58ede429-454e-49e7-88d0-3cb106ce138c","name":"US Office","address":"2018 156th Ave NE","city":"Bellevue","state":"WA","country":"USA","postal_code":"98007"}');
+INSERT INTO types (id, version, name, description, attributes) VALUES ('2024052113b4a4026051',1,'Customer','Cutomer Schema','{"id":"a4b1706b-8fb6-48b4-9a3f-13beff5705d2","name":"Customer","description":"Customer Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Customer","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the customer."},"name":{"type":"string","description":"Name of the customer."},"type":{"type":"string","enum":["individual","business"],"description":"Type of customer, either individual or business."}},"required":["id","name","type"]}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe018be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294406","type":"business","name":"Acme Corp"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe019be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294407","type":"business","name":"Beta LLC"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe020be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294408","type":"business","name":"Gamma Industries"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe027be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294409","type":"business","name":"Delta Services"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe037be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294410","type":"business","name":"Epsilon Solutions"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe047be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294411","type":"business","name":"Zeta Technologies"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe057be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294412","type":"business","name":"Eta Consulting"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe067be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294413","type":"business","name":"Theta Enterprises"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe077be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294414","type":"business","name":"Iota Innovations"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe087be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294415","type":"business","name":"Kappa Ventures"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe097be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294416","type":"business","name":"Lambda Solutions"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe117be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294417","type":"business","name":"Mu Technologies"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe217be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294418","type":"business","name":"Nu Consulting"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe317be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294419","type":"business","name":"Xi Enterprises"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe417be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294420","type":"business","name":"Omicron Innovations"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe517be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294421","type":"business","name":"Pi Solutions"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe617be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294422","type":"business","name":"Rho Technologies"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe717be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294423","type":"business","name":"Sigma Consulting"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe817be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294424","type":"business","name":"Tau Enterprises"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe917be','2024052113b4a4026051','{"id":"a75798ae-60ff-44a5-9021-78a9cb294425","type":"business","name":"Upsilon Ventures"}');
 
 
-INSERT INTO types (id, version, name, description, attributes) VALUES ('2024052113b4a4026051',1,'Customer','Cutomer Schema','{"id":"a4b1706b-8fb6-48b4-9a3f-13beff5705d2","name":"Customer","description":"Customer Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Customer","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the customer."},"type":{"type":"string","enum":["individual", "business", "government", "non_profit", "educational_institution", "partner"],"description":"Type of customer, either individual or business."}},"required":["id","type"]}}');
+INSERT INTO types (id, version, name, description, attributes) VALUES ('202405220910094796f8',1,'Vendor','Vendor Schema','{"id":"596d0e92-eb06-46f2-ac2a-0939281e2fe3","name":"Vendor","description":"Vendor Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Vendor","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the vendor."},"name":{"type":"string","description":"Name of the vendor."},"type":{"type":"string","enum":["individual","business"],"description":"Type of vendor, either individual or business."}},"required":["id","name","type"]}}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210accbe017be','202405220910094796f8','{"id":"e8e7be29-402b-4381-95ee-dd19937a39c2","type":"business","name":"Google GCP"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210c83a3d4da1','202405220910094796f8','{"id":"de01c5f6-6b0a-46d7-b88c-ad0eec3c8a9a","type":"business","name":"AWS"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210c83a3d4da1','202405220910094796f8','{"id":"de01c5f6-6e0a-46d7-b88c-ad0eec3c8a9a","type":"business","name":"Google Workspace"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210e0afd784d3','202405220910094796f8','{"id":"0d837b7c-8810-4693-b321-2974986898b1","type":"business","name":"Zoom"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210a254953824','202405220910094796f8','{"id":"a75798ae-60ff-44a5-9020-78a9cb294406","type":"business","name":"Github.com"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210a254953825','202405220910094796f8','{"id":"a75798ae-60ff-44a5-9022-78a9cb294406","type":"business","name":"Apple"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210a254953826','202405220910094796f8','{"id":"a75798ae-60ff-44a5-9023-78a9cb294406","type":"business","name":"WeWork"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210a254953827','202405220910094796f8','{"id":"a75798ae-60ff-44a5-9024-78a9cb294406","type":"business","name":"Temporal.IO"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210a254953828','202405220910094796f8','{"id":"a75798ae-60ff-44a5-9025-78a9cb294406","type":"business","name":"MSFT"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210a254953829','202405220910094796f8','{"id":"a75798ae-60ff-44a5-9026-78a9cb294406","type":"business","name":"Salesforce"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210a254953830','202405220910094796f8','{"id":"a75798ae-60ff-44a5-9027-78a9cb294406","type":"business","name":"Hubspot"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210a254953831','202405220910094796f8','{"id":"a75798ae-60ff-44a5-9028-78a9cb294406","type":"business","name":"nestorbird.com"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210a254953832','202405220910094796f8','{"id":"a75798ae-60ff-44a5-9029-78a9cb294406","type":"business","name":"Stripe"}');
+INSERT INTO operational_entities (id, entity_type, attributes) VALUES ('2024052210a254953829','202405220910094796f8','{"id":"a75798ae-60ff-44a6-9025-78a9cb294406","type":"business","name":"MSFT Azure"}');
 
+
+
+INSERT INTO types (id, version, name, description, attributes) VALUES ('2024052209ef7f88a1d9',1,'Contact','Contact Information Schema','{"id":"54810dc7-e78f-42b3-b790-2bb3e5d2755f","name":"Contact","description":"Contact Schema","schema":{"$schema":"http://json-schema.org/draft-07/schema#","title":"Contact Information","type":"object","properties":{"id":{"type":"string","description":"Unique identifier for the contact information entry."},"name":{"type":"string","description":"Name of the contact."},"phone":{"type":"string","description":"Phone number."},"email":{"type":"string","format":"email","description":"Email address."},"address":{"type":"object","properties":{"street":{"type":"string","description":"Street address."},"city":{"type":"string","description":"City."},"state":{"type":"string","description":"State or region."},"postal_code":{"type":"string","description":"Postal or ZIP code."},"country":{"type":"string","description":"Country."}},"required":["street","city","state","postal_code","country"],"description":"Physical address."}},"required":["id","name"]}}');
 
 INSERT INTO transactions (id, issue_date, accrual_date, cash_date, amount, description, documents, created_at, from_entity, to_entity) VALUES ('2024052107f0490b5d9d',);
 
@@ -388,3 +539,66 @@ INSERT INTO scenarios (id, description, changes) VALUES
     {"id":"id2", "description": "Add 10 New Sales Agents","attributes": {"magnitude": 10, "additional_salary": 60000, "type": "new_hires"}},
     {"id":"id3", "description": "Open new office in LA","attributes": {"magnitude": 1, "new_location": "Los Angeles", "type": "office_opening"}}
 ]');
+
+
+
+
+
+
+
+
+-- find all the edges 
+-- "202405210790db1ba3fe"
+-- "2024052107c6ba0f964f"
+-- "202405211466f89695af"
+-- "2024052109a383519ba0"
+-- "202405212026b95d208b"
+-- "202405211372bb0f2623"
+-- "202405210745290b68e8"
+
+-- select node2_id as edge from type_relationships where node1_id='2024051712d2d2d2d2d2' union select node1_id as edge from type_relationships where node2_id='2024051712d2d2d2d2d2'
+-- find all full-time employees
+-- find all the employees via where entity_type is 'employee' then find all the type_relationships to the employee type, then find all the operational_relationships where node1_id or node2_id type is one of those schema type, then allow filter by all the schema key
+-- select * from operational_entities where entity_type='202405210790db1ba3fe' and id = 
+
+
+-- SELECT oe.id, oe.attributes->>'first_name' AS first_name, oe.attributes->>'last_name' AS last_name, et.attributes->>'type' AS employment_type, st.attributes->>'status' AS status
+-- FROM operational_entities oe
+-- JOIN types t1 ON oe.entity_type = t1.id
+-- JOIN operational_entities et ON et.id = oe.id AND et.entity_type = '202405210790db1ba3fe' AND et.attributes->>'type' = 'full_time'
+-- JOIN operational_entities st ON st.id = oe.id AND st.entity_type = '202405211372bb0f2623' AND st.attributes->>'status' = 'active'
+-- WHERE t1.id = '202405210790db1ba3fe';
+
+-- SELECT oe.id, oe.attributes->>'first_name' AS first_name, oe.attributes->>'last_name' AS last_name, oe.attributes->>'employee_id' AS employee_id
+-- FROM operational_entities oe
+-- JOIN operational_relationships or1 ON oe.id = or1.node1_id
+-- JOIN operational_entities et ON or1.node2_id = et.id
+-- JOIN operational_relationships or2 ON oe.id = or2.node1_id
+-- JOIN operational_entities st ON or2.node2_id = st.id
+-- WHERE et.entity_type = '202405210790db1ba3fe' AND et.attributes->>'type' = 'full_time'
+--   AND st.entity_type = '202405211372bb0f2623' AND st.attributes->>'status' = 'active';
+
+-- SELECT oe.id AS employee_id, 
+--        oe.attributes->>'first_name' AS first_name, 
+--        oe.attributes->>'last_name' AS last_name,
+--        loc.attributes->>'name' AS location_name,
+--        loc.attributes->>'address' AS location_address,
+--        loc.attributes->>'city' AS location_city,
+--        loc.attributes->>'state' AS location_state,
+--        loc.attributes->>'country' AS location_country,
+--        loc.attributes->>'postal_code' AS location_postal_code
+-- FROM operational_entities oe
+-- JOIN operational_relationships or1 ON oe.id = or1.node1_id
+-- JOIN operational_entities loc ON or1.node2_id = loc.id
+-- WHERE oe.entity_type = (SELECT id FROM types WHERE name = 'Employee')
+--   AND loc.entity_type = (SELECT id FROM types WHERE name = 'Location');
+
+SELECT oe.id AS employee_id, 
+       oe.attributes->>'first_name' AS first_name, 
+       oe.attributes->>'last_name' AS last_name,
+       dept.attributes->>'name' AS department_name
+FROM operational_entities oe
+JOIN operational_relationships or1 ON oe.id = or1.node1_id
+JOIN operational_entities dept ON or1.node2_id = dept.id
+WHERE oe.entity_type = (SELECT id FROM types WHERE name = 'Employee')
+  AND dept.entity_type = (SELECT id FROM types WHERE name = 'Department');

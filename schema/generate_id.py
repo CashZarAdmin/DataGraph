@@ -14,7 +14,7 @@ def generate_id():
     return uuid_val, combined_id
 
 # Generate 20 UUID and ID pairs
-uuid_id_pairs = [generate_id() for i in range(10)]
+uuid_id_pairs = [generate_id() for i in range(5)]
 
 # Print the results
 for uuid_val, generated_id in uuid_id_pairs:
